@@ -13,7 +13,7 @@ export const InfiniteScrollGrid: React.FC<{
 			<div className='mx-auto max-w-4xl'>
 				<div className='grid grid-cols-5 gap-4'>
 					{Array.from({ length: gridColumns }, (_, colIndex) => {
-						const randomStartIndex = Math.floor(Math.random() * colIndex * 13);
+						const randomStartIndex = Math.floor(colIndex * 5);
 
 						return (
 							<div key={colIndex} className='h-[25rem] overflow-hidden'>
@@ -28,10 +28,7 @@ export const InfiniteScrollGrid: React.FC<{
 										ease: 'linear'
 									}}
 								>
-									{[
-										...icons.slice(randomStartIndex),
-										...icons.slice(0, randomStartIndex)
-									].map((icon, index) => (
+									{[...icons.slice(randomStartIndex)].map((icon, index) => (
 										<div
 											key={`${colIndex}-${index}-${icon.name}`}
 											className='flex aspect-square w-full items-center justify-center'

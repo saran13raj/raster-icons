@@ -1,0 +1,24 @@
+<svg width="256" height="256" viewBox="0 0 256 256" fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg">
+<rect width="16" height="16" transform="matrix(0 -1 -1 0 120 152)" />
+<rect width="16" height="16" transform="matrix(0 -1 -1 0 104 168)" />
+<rect width="16" height="16" transform="matrix(0 -1 -1 0 184 184)" />
+<rect width="16" height="16" transform="matrix(0 -1 -1 0 88 184)" />
+<rect width="16" height="16" transform="matrix(0 -1 -1 0 168 104)" />
+<rect width="16" height="16" transform="matrix(0 -1 -1 0 184 88)" />
+<rect width="16" height="16" transform="matrix(0 -1 -1 0 200 72)" />
+<rect width="16" height="16" transform="matrix(0 -1 -1 0 200 200)" />
+<rect width="16" height="16" transform="matrix(0 -1 -1 0 152 120)" />
+<rect width="16" height="16" transform="matrix(0 -1 -1 0 152 152)" />
+<rect width="16" height="16" transform="matrix(0 -1 -1 0 136 136)" />
+<rect width="16" height="16" transform="matrix(0 -1 -1 0 120 120)" />
+<rect width="16" height="16" transform="matrix(0 -1 -1 0 136 136)" />
+<rect width="16" height="16" transform="matrix(0 -1 -1 0 168 168)" />
+<rect width="16" height="16" transform="matrix(0 -1 -1 0 88 88)" />
+<rect width="16" height="16" transform="matrix(0 -1 -1 0 72 72)" />
+<rect width="16" height="16" transform="matrix(0 -1 -1 0 72 200)" />
+<rect width="16" height="16" transform="matrix(0 -1 -1 0 104 104)" />
+</svg>

@@ -25,7 +25,9 @@ export const RasterIcon: React.FC<IconComponentProps> = ({
 			...rest
 		},
 		[
-			...iconNode.map(([tag, attrs]) => createElement(tag, attrs)),
+			...iconNode.map(([tag, attrs], index) =>
+				createElement(tag, { key: `${tag}-${index}`, ...attrs })
+			),
 			...(Array.isArray(children) ? children : [children])
 		]
 	);
