@@ -1,9 +1,4 @@
-import {
-	ReactSVG,
-	SVGProps,
-	ForwardRefExoticComponent,
-	RefAttributes
-} from 'react';
+import { SVGProps, ForwardRefExoticComponent, RefAttributes } from 'react';
 
 // export type RasterIconNode = [
 // 	elementName: keyof ReactSVG,

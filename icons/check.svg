@@ -1,0 +1,15 @@
+<svg width="256" height="256" viewBox="0 0 256 256" fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+ xmlns="http://www.w3.org/2000/svg">
+<rect x="80" y="128" width="16" height="16" transform="rotate(90 80 128)" />
+<rect x="96" y="144" width="16" height="16" transform="rotate(90 96 144)" />
+<rect x="112" y="160" width="16" height="16" transform="rotate(90 112 160)" />
+<rect x="128" y="144" width="16" height="16" transform="rotate(90 128 144)" />
+<rect x="144" y="128" width="16" height="16" transform="rotate(90 144 128)" />
+<rect x="160" y="112" width="16" height="16" transform="rotate(90 160 112)" />
+<rect x="176" y="96" width="16" height="16" transform="rotate(90 176 96)" />
+<rect x="192" y="80" width="16" height="16" transform="rotate(90 192 80)" />
+</svg>
