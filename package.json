@@ -1,0 +1,28 @@
+{
+	"name": "raster-icons-root",
+	"description": "raster icons root",
+	"scripts": {
+		"lint": "pnpm eslint",
+		"format": "prettier --write --ignore-unknown '**/*.{js,ts,mjs,cjs,json,svg}'",
+		"format:ci": "prettier --check --ignore-unknown '**/*.{js,ts,mjs,cjs,json,svg}'",
+		"version-up": "lerna version",
+		"version-snapshot": "lerna version --no-push --no-git-tag-version --yes --preid snapshot prepatch --force-publish",
+		"version": "pnpm install && git add .",
+		"lerna": "lerna"
+	},
+	"author": "saran13raj",
+	"license": "ISC",
+	"devDependencies": {
+		"@eslint/js": "^9.17.0",
+		"@typescript-eslint/eslint-plugin": "^7.8.0",
+		"@typescript-eslint/parser": "^7.8.0",
+		"eslint": "^9.17.0",
+		"eslint-plugin-react": "^7.34.1",
+		"globals": "^15.1.0",
+		"lerna": "^8.1.2",
+		"prettier": "^3.2.5",
+		"prettier-plugin-tailwindcss": "^0.6.9",
+		"typescript-eslint": "^7.8.0"
+	},
+	"packageManager": "pnpm@8.7.6"
+}

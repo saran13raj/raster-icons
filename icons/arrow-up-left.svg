@@ -1,0 +1,22 @@
+<svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+ xmlns="http://www.w3.org/2000/svg">
+<rect x="144" y="160" width="16" height="16" transform="rotate(-90 144 160)" fill="#2B2B2B"/>
+<rect x="160" y="176" width="16" height="16" transform="rotate(-90 160 176)" fill="#2B2B2B"/>
+<rect x="80" y="96" width="16" height="16" transform="rotate(-90 80 96)" fill="#2B2B2B"/>
+<rect x="64" y="80" width="16" height="16" transform="rotate(-90 64 80)" fill="#2B2B2B"/>
+<rect x="80" y="80" width="16" height="16" transform="rotate(-90 80 80)" fill="#2B2B2B"/>
+<rect x="96" y="80" width="16" height="16" transform="rotate(-90 96 80)" fill="#2B2B2B"/>
+<rect x="112" y="80" width="16" height="16" transform="rotate(-90 112 80)" fill="#2B2B2B"/>
+<rect x="128" y="80" width="16" height="16" transform="rotate(-90 128 80)" fill="#2B2B2B"/>
+<rect x="64" y="96" width="16" height="16" transform="rotate(-90 64 96)" fill="#2B2B2B"/>
+<rect x="64" y="112" width="16" height="16" transform="rotate(-90 64 112)" fill="#2B2B2B"/>
+<rect x="64" y="128" width="16" height="16" transform="rotate(-90 64 128)" fill="#2B2B2B"/>
+<rect x="64" y="144" width="16" height="16" transform="rotate(-90 64 144)" fill="#2B2B2B"/>
+<rect x="128" y="144" width="16" height="16" transform="rotate(-90 128 144)" fill="#2B2B2B"/>
+<rect x="112" y="128" width="16" height="16" transform="rotate(-90 112 128)" fill="#2B2B2B"/>
+<rect x="96" y="112" width="16" height="16" transform="rotate(-90 96 112)" fill="#2B2B2B"/>
+</svg>

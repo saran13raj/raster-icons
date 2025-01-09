@@ -1,0 +1,38 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+	font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+	font-synthesis: none;
+	text-rendering: optimizeLegibility;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+body {
+	background-color: #1a1b1e;
+}
+
+/* Remove the border from the color input swatch */
+input[type='color'] {
+	-webkit-appearance: none; /* Remove default styling in WebKit browsers */
+	border: none; /* Remove any border */
+	padding: 0; /* Remove padding */
+}
+
+input[type='color']::-webkit-color-swatch {
+	border: none; /* Remove the border for WebKit browsers (Chrome, Safari) */
+}
+
+input[type='color']::-moz-color-swatch {
+	border: none; /* Remove the border for Firefox */
+}
+
+.raster-icon {
+	will-change: width, height, stroke-width, stroke;
+	color: var(--customize-color, currentColor);
+	stroke-width: var(--customize-strokeWidth, 2);
+	width: calc(var(--customize-size, 24) * 1px);
+	height: calc(var(--customize-size, 24) * 1px);
+}
