@@ -1,4 +1,4 @@
-import { createElement } from 'react';
+import React from 'react';
 
 import { cn } from '../utils';
 import { RasterIconNode, RasterProps } from '../types';
@@ -8,27 +8,25 @@ interface IconComponentProps extends RasterProps {
 	iconNode: RasterIconNode;
 }
 
-export const RasterIcon: React.FC<IconComponentProps> = ({
-	strokeWidth = 2,
-	className = '',
-	children,
-	iconNode,
-	...rest
-}) => {
-	return createElement(
-		'svg',
-		{
-			...defaultAttributes,
-			stroke: 'currentColor',
-			strokeWidth: strokeWidth,
-			className: cn('raster-icon', className),
-			...rest
-		},
-		[
-			...iconNode.map(([tag, attrs], index) =>
-				createElement(tag, { key: `${tag}-${index}`, ...attrs })
-			),
-			...(Array.isArray(children) ? children : [children])
-		]
-	);
-};
+const RasterIcon: React.FC<IconComponentProps> = React.memo(
+	({ strokeWidth = 2, className = '', children, iconNode, ...rest }) => {
+		return React.createElement(
+			'svg',
+			{
+				...defaultAttributes,
+				stroke: 'currentColor',
+				strokeWidth: strokeWidth,
+				className: cn('raster-icon', className),
+				...rest
+			},
+			[
+				...iconNode.map(([tag, attrs], index) =>
+					React.createElement(tag, { key: `${tag}-${index}`, ...attrs })
+				),
+				...(Array.isArray(children) ? children : [children])
+			]
+		);
+	}
+);
+
+export default RasterIcon;

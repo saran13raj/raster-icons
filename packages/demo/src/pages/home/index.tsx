@@ -1,12 +1,13 @@
 import React from 'react';
 
 import { Button } from '../../shared/ui/button';
-import { InfiniteScrollGrid } from '../../shared/ui/infinite-scroll-grid';
+import InfiniteScrollGrid from '../../shared/ui/infinite-scroll-grid';
 import { getIconNodes } from '../../shared/utils';
 import { ParsedIcon } from '../../shared/types';
 
 export const Home: React.FC = () => {
 	const [strokeWidth, setStrokeWidth] = React.useState(0.25);
+	const [cornerRadius, setCornerRadius] = React.useState(1);
 	const [size, setSize] = React.useState(80);
 	const [color, setColor] = React.useState('#FEFEFE');
 	const [icons, setIcons] = React.useState<ParsedIcon[]>([]);
@@ -21,15 +22,28 @@ export const Home: React.FC = () => {
 
 	React.useEffect(() => {
 		document.documentElement.style.setProperty('--customize-color', color);
+	}, [color]);
+
+	React.useEffect(() => {
 		document.documentElement.style.setProperty(
 			'--customize-strokeWidth',
 			strokeWidth.toString()
 		);
+	}, [strokeWidth]);
+
+	React.useEffect(() => {
 		document.documentElement.style.setProperty(
 			'--customize-size',
 			size.toString()
 		);
-	}, [color, strokeWidth, size]);
+	}, [size]);
+
+	React.useEffect(() => {
+		document.documentElement.style.setProperty(
+			'--customize-cornerRadius',
+			cornerRadius.toString()
+		);
+	}, [cornerRadius]);
 
 	return (
 		<>
@@ -137,6 +151,21 @@ export const Home: React.FC = () => {
 								style={{ backgroundColor: color }}
 							/>
 						</Button>
+					</div>
+					<div className=''>
+						<label className='flex justify-between text-xs font-medium'>
+							Corner radius
+							<span className='text-zinc-500'>{cornerRadius}px</span>
+						</label>
+						<input
+							type='range'
+							min='0'
+							max='7'
+							step='1'
+							value={cornerRadius}
+							onChange={(e) => setCornerRadius(Number(e.target.value))}
+							className='range-sm accent-primary1 mb-6 h-1 w-full cursor-pointer appearance-none rounded-lg bg-zinc-700'
+						/>
 					</div>
 					<div className=''>
 						<label className='flex justify-between text-xs font-medium'>

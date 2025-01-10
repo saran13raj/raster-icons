@@ -1,13 +1,14 @@
 import { motion } from 'motion/react';
+import React from 'react';
 
 import { ParsedIcon } from '../types';
-import { RasterIcon } from './RasterIcon';
+import RasterIcon from './RasterIcon';
 
 const gridColumns = 5;
 
-export const InfiniteScrollGrid: React.FC<{
+const InfiniteScrollGrid: React.FC<{
 	icons: ParsedIcon[];
-}> = ({ icons = [] }) => {
+}> = React.memo(({ icons = [] }) => {
 	return (
 		<div className='h-full w-full'>
 			<div className='mx-auto max-w-4xl'>
@@ -45,4 +46,6 @@ export const InfiniteScrollGrid: React.FC<{
 			</div>
 		</div>
 	);
-};
+});
+
+export default InfiniteScrollGrid;
