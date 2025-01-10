@@ -62,36 +62,3 @@ export const getIconNodes = async (): Promise<ParsedIcon[]> => {
 		return [];
 	}
 };
-
-// interface IconNode {
-// 	name: string;
-// 	content: string;
-// }
-
-// export const getIconNodes = async (): Promise<IconNode[]> => {
-// 	const icons: IconNode[] = [];
-
-// 	try {
-// 		// Get all SVG files from the icons directory
-// 		const iconModules = import.meta.glob('../../../../../icons/*.svg', {
-// 			as: 'raw',
-// 			eager: true
-// 		});
-
-// 		// Process each icon file
-// 		for (const path in iconModules) {
-// 			const name = path.split('/').pop()?.replace('.svg', '') || '';
-// 			const content = iconModules[path] as string;
-
-// 			icons.push({
-// 				name,
-// 				content
-// 			});
-// 		}
-
-// 		return icons;
-// 	} catch (error) {
-// 		console.error('Error loading icons:', error);
-// 		return [];
-// 	}
-// };

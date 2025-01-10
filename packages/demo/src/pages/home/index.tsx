@@ -1,11 +1,9 @@
 import React from 'react';
 
-import { RasterLogo } from '../../shared/ui/raster-logo';
 import { Button } from '../../shared/ui/button';
 import { InfiniteScrollGrid } from '../../shared/ui/infinite-scroll-grid';
 import { getIconNodes } from '../../shared/utils';
 import { ParsedIcon } from '../../shared/types';
-import { Link } from 'react-router-dom';
 
 export const Home: React.FC = () => {
 	const [strokeWidth, setStrokeWidth] = React.useState(0.25);
@@ -17,7 +15,6 @@ export const Home: React.FC = () => {
 		const fetchIcons = async () => {
 			const icons = await getIconNodes();
 			setIcons(icons);
-			console.log(icons);
 		};
 		fetchIcons();
 	}, []);
@@ -38,9 +35,9 @@ export const Home: React.FC = () => {
 		<>
 			<div className='flex flex-col border border-dashed border-zinc-300 p-8 lg:flex-row dark:border-zinc-700'>
 				<div className='flex flex-col gap-2'>
-					<div className='flex w-fit items-center gap-2 rounded-sm bg-zinc-700/60 px-2 py-[0.5px] text-black dark:text-white'>
+					<div className='mb-1 flex w-fit items-center gap-2 rounded-sm bg-zinc-700/60 px-2 py-[0.5px] text-black dark:text-white'>
 						<p
-							className='typing-animation text-sm font-medium text-black dark:text-white'
+							className='text-sm font-medium text-black dark:text-white'
 							data-text='version-0.0.1'
 						>
 							v0.0.1
@@ -130,7 +127,7 @@ export const Home: React.FC = () => {
 						<Button
 							onClick={() => {}}
 							label={color}
-							customClass='cursor-default text-xs w-[9rem]'
+							customClass='cursor-default text-xs w-[9rem] justify-between'
 						>
 							<input
 								type='color'
@@ -173,7 +170,7 @@ export const Home: React.FC = () => {
 					</div>
 				</div>
 				{/* preview */}
-				<div className='relative flex h-full flex-col justify-between overflow-hidden bg-white/30 p-8 lg:col-span-2 dark:bg-zinc-800'>
+				<div className='relative flex h-full flex-col justify-between overflow-hidden bg-white/30 p-8 lg:col-span-2 dark:bg-zinc-800/40'>
 					<InfiniteScrollGrid icons={icons} />
 				</div>
 			</div>
