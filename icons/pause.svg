@@ -3,16 +3,16 @@
   stroke-width="2"
   stroke-linecap="round"
   stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg">
-<rect x="88" y="112" width="16" height="16" />
-<rect x="88" y="96" width="16" height="16" />
-<rect x="88" y="80" width="16" height="16" />
-<rect x="88" y="144" width="16" height="16" />
-<rect x="88" y="160" width="16" height="16" />
-<rect x="88" y="128" width="16" height="16" />
-<rect x="152" y="112" width="16" height="16" />
-<rect x="152" y="96" width="16" height="16" />
-<rect x="152" y="80" width="16" height="16" />
-<rect x="152" y="144" width="16" height="16" />
-<rect x="152" y="160" width="16" height="16" />
-<rect x="152" y="128" width="16" height="16" />
+<rect x="88" y="112" width="14" height="14" />
+<rect x="88" y="96" width="14" height="14" />
+<rect x="88" y="80" width="14" height="14" />
+<rect x="88" y="144" width="14" height="14" />
+<rect x="88" y="160" width="14" height="14" />
+<rect x="88" y="128" width="14" height="14" />
+<rect x="152" y="112" width="14" height="14" />
+<rect x="152" y="96" width="14" height="14" />
+<rect x="152" y="80" width="14" height="14" />
+<rect x="152" y="144" width="14" height="14" />
+<rect x="152" y="160" width="14" height="14" />
+<rect x="152" y="128" width="14" height="14" />
 </svg>

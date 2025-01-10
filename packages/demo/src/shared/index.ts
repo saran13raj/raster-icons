@@ -5,7 +5,7 @@ export const defaultAttributes = {
 	viewBox: '0 0 256 256',
 	fill: 'currentColor',
 	stroke: 'currentColor',
-	strokeWidth: 2,
+	strokeWidth: 0.25,
 	strokeLinecap: 'round',
 	strokeLinejoin: 'round'
 };

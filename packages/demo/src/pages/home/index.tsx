@@ -7,7 +7,7 @@ import { getIconNodes } from '../../shared/utils';
 import { ParsedIcon } from '../../shared/types';
 
 export const Home: React.FC = () => {
-	const [strokeWidth, setStrokeWidth] = React.useState(1);
+	const [strokeWidth, setStrokeWidth] = React.useState(0.25);
 	const [size, setSize] = React.useState(80);
 	const [color, setColor] = React.useState('#FEFEFE');
 	const [icons, setIcons] = React.useState<ParsedIcon[]>([]);
@@ -160,7 +160,7 @@ export const Home: React.FC = () => {
 									</label>
 									<input
 										type='range'
-										min='1'
+										min='0.25'
 										max='3'
 										step='0.25'
 										value={strokeWidth}
