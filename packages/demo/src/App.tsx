@@ -11,21 +11,21 @@ function App() {
 			<div className='relative mx-auto flex min-h-screen flex-col border-dashed border-zinc-300 bg-[#f7f7f7] 2xl:max-w-7xl 2xl:border-x dark:border-zinc-700 dark:bg-[#1a1c1f]'>
 				<main className='flex-grow'>
 					<section className='relative overflow-hidden'>
-						<div className='relative p-8 lg:px-44 2xl:px-24'>
+						<div className='relative p-5 md:p-0 lg:px-16 xl:px-28'>
 							<div className='flex flex-col'>
-								<div className='mb-10 flex items-center justify-between'>
+								<div className='mb-10 mt-2 flex items-center justify-between'>
 									<Link
-										className='w-fit items-center text-center text-sm font-semibold text-black lg:text-base dark:text-white'
+										className='w-fit items-center text-center font-semibold text-black lg:text-base dark:text-white'
 										to='/'
 									>
 										<RasterLogo customClass='h-[4rem] w-[4rem]' />
 										<div className=''>Raster</div>
 									</Link>
 									<Link
-										className='w-fit items-center text-center text-sm font-semibold text-black lg:text-base dark:text-white'
+										className='w-fit items-center text-center font-semibold text-black lg:text-base dark:text-white'
 										to='/icons'
 									>
-										<div className=''>Icons</div>
+										<div className='text-sm'>Icons</div>
 									</Link>
 								</div>
 								<Routes location={location}>
