@@ -16,7 +16,7 @@ export const IconDetails: React.FC<{
 			<Drawer showDrawer={showDrawer} setShowDrawer={setShowDrawer} customClass=''>
 				{icon && (
 					<div className='flex'>
-						<div className='rounded-lg bg-zinc-900'>
+						<div className='rounded-lg bg-zinc-900 shadow-xl'>
 							<RasterIconLarge iconNode={icon.node} height={256} width={256} />
 						</div>
 						<div className='ml-8 flex w-full flex-col gap-2'>

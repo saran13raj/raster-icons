@@ -84,13 +84,13 @@ export const ControlsSidebar: React.FC<{
 			{/* Mobile Menu */}
 			{isOpen && (
 				<div className='fixed inset-0 z-10 bg-black bg-opacity-50 lg:hidden'>
-					<div className='absolute left-0 top-0 h-full w-64 bg-white p-4'>
-						<button className='text-black' onClick={() => setIsOpen(false)}>
-							Close
-						</button>
+					<div className='absolute left-0 top-0 h-full w-64 bg-zinc-900 p-4 text-black dark:text-white'>
 						<div className='flex flex-col gap-4'>
-							<p className='text-base leading-tight text-black md:text-lg lg:text-xl dark:text-white'>
+							<p className='flex justify-between text-base leading-tight md:text-lg lg:text-xl'>
 								Controls
+								<button className='' onClick={() => setIsOpen(false)}>
+									X
+								</button>
 							</p>
 							{/* <ControlItem label='Color' value={color}>
 								<input

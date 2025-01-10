@@ -67,7 +67,7 @@ export const Icons: React.FC = () => {
 	}, [cornerRadius]);
 
 	return (
-		<div className='flex flex-col md:flex-row'>
+		<div className='flex h-full min-h-[40rem] flex-col md:flex-row'>
 			<ControlsSidebar
 				color={color}
 				setColor={setColor}
@@ -78,7 +78,7 @@ export const Icons: React.FC = () => {
 				size={size}
 				setSize={setSize}
 			/>
-			<div className='mb-10 flex flex-col gap-4 md:mb-0 md:p-6 lg:w-3/4'>
+			<div className='flex flex-col gap-4 md:mb-0 md:p-6 lg:w-3/4'>
 				<div className='w-full'>
 					<input
 						value={searchText}
