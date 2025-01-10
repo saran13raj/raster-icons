@@ -52,13 +52,13 @@ function App() {
 							</footer>
 						</div>
 					</section>
-					<Toaster
-						toastOptions={{
-							className: 'border bg-zinc-950 border-zinc-800 text-white'
-						}}
-					/>
 				</main>
 			</div>
+			<Toaster
+				toastOptions={{
+					className: 'border bg-zinc-950 border-zinc-800 text-white'
+				}}
+			/>
 		</>
 	);
 }

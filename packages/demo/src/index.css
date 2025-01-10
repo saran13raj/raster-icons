@@ -12,6 +12,7 @@
 
 body {
 	background-color: #1a1b1e;
+	--rt-opacity: 1;
 }
 
 /* Remove the border from the color input swatch */

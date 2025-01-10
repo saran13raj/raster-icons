@@ -1,4 +1,5 @@
 import React from 'react';
+import { Tooltip as ReactTooltip } from 'react-tooltip';
 
 import { Button } from '../../shared/ui/button';
 import { getIconNodes } from '../../shared/utils';
@@ -45,7 +46,7 @@ export const Icons: React.FC = () => {
 	return (
 		<div className='flex flex-row'>
 			<div className='flex flex-col border border-b-0 border-dashed border-zinc-300 p-4 lg:w-1/4 dark:border-zinc-700'>
-				<div className='relative flex h-full flex-col justify-start gap-4 p-2 text-black dark:text-white'>
+				<div className='relative flex flex-col justify-start gap-4 rounded-md bg-zinc-800/40 px-4 py-2 text-black dark:text-white'>
 					<div>
 						<p className='text-base leading-tight text-black md:text-lg lg:text-xl dark:text-white'>
 							Controls
@@ -115,14 +116,29 @@ export const Icons: React.FC = () => {
 					{filteredIcons.map((icon, index) => (
 						<div
 							key={`${index}-${icon.name}`}
-							className='flex aspect-square h-[52px] w-[52px] items-center justify-center overflow-hidden rounded-sm bg-zinc-800/40 hover:cursor-pointer'
+							className='flex aspect-square h-[52px] w-[52px] items-center justify-center overflow-hidden rounded-sm bg-zinc-800/40 hover:cursor-pointer hover:bg-zinc-700/70'
 							aria-label={icon.name}
+							data-tooltip-id='raster-tooltip'
+							data-tooltip-content={icon.name}
+							data-tooltip-offset={-2}
 						>
 							<RasterIcon iconNode={icon.node} />
 						</div>
 					))}
 				</div>
 			</div>
+			<ReactTooltip
+				id='raster-tooltip'
+				arrowColor='transparent'
+				place='top'
+				className='text-zinc-50'
+				style={{
+					backgroundColor: '#f54',
+					padding: '2px 5px',
+					fontSize: '12px',
+					borderRadius: '4px'
+				}}
+			/>
 		</div>
 	);
 };
