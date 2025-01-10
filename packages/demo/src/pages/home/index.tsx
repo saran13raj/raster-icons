@@ -4,6 +4,7 @@ import { Button } from '../../shared/ui/button';
 import InfiniteScrollGrid from '../../shared/ui/infinite-scroll-grid';
 import { getIconNodes } from '../../shared/utils';
 import { ParsedIcon } from '../../shared/types';
+import { ControlRangeItem } from '../../widgets/controls-sidebar';
 
 export const Home: React.FC = () => {
 	const [strokeWidth, setStrokeWidth] = React.useState(0.25);
@@ -103,7 +104,7 @@ export const Home: React.FC = () => {
 				</li>
 			</ul>
 
-			<div className='relative grid grid-cols-1 border border-dashed border-zinc-300 md:grid-cols-2 lg:grid-cols-3 dark:border-zinc-700'>
+			<div className='relative grid grid-cols-1 border border-dashed border-zinc-300 md:grid-cols-2 md:border-b-0 lg:grid-cols-3 dark:border-zinc-700'>
 				{/* <!-- Top Left Plus --> */}
 				<div className='z-5 absolute -left-[0.65rem] -top-[0.65rem] flex size-5 items-center justify-center'>
 					<div className='absolute h-[1px] w-full bg-zinc-300 dark:bg-zinc-300'></div>
@@ -127,7 +128,7 @@ export const Home: React.FC = () => {
 				{/* controls */}
 				<div className='relative flex h-full flex-col justify-start gap-8 border-zinc-300 p-8 text-black lg:col-span-1 lg:border-r dark:border-zinc-700 dark:text-white'>
 					<div>
-						<h3 className='text-lg leading-tight text-black sm:text-xl md:text-2xl lg:text-3xl dark:text-white'>
+						<h3 className='text-lg font-medium leading-tight text-black md:text-xl lg:text-2xl dark:text-white'>
 							Style as you please
 						</h3>
 						<p className='text-sm text-zinc-500 dark:text-zinc-400'>
@@ -152,54 +153,33 @@ export const Home: React.FC = () => {
 							/>
 						</Button>
 					</div>
-					<div className=''>
-						<label className='flex justify-between text-xs font-medium'>
-							Corner radius
-							<span className='text-zinc-500'>{cornerRadius}px</span>
-						</label>
-						<input
-							type='range'
-							min='0'
-							max='7'
-							step='1'
-							value={cornerRadius}
-							onChange={(e) => setCornerRadius(Number(e.target.value))}
-							className='range-sm accent-primary1 mb-6 h-1 w-full cursor-pointer appearance-none rounded-lg bg-zinc-700'
-						/>
-					</div>
-					<div className=''>
-						<label className='flex justify-between text-xs font-medium'>
-							Stroke width
-							<span className='text-zinc-500'>{strokeWidth}px</span>
-						</label>
-						<input
-							type='range'
-							min='0.25'
-							max='3'
-							step='0.25'
-							value={strokeWidth}
-							onChange={(e) => setStrokeWidth(Number(e.target.value))}
-							className='range-sm accent-primary1 mb-6 h-1 w-full cursor-pointer appearance-none rounded-lg bg-zinc-700'
-						/>
-					</div>
-					<div className=''>
-						<label className='flex justify-between text-xs font-medium'>
-							Size
-							<span className='text-zinc-500'>{size}px</span>
-						</label>
-						<input
-							type='range'
-							min='16'
-							max='120'
-							step='1'
-							value={size}
-							onChange={(e) => setSize(Number(e.target.value))}
-							className='range-sm accent-primary1 mb-6 h-1 w-full cursor-pointer appearance-none rounded-lg bg-zinc-700'
-						/>
-					</div>
+					<ControlRangeItem
+						label='Corner radius'
+						value={cornerRadius}
+						min={0}
+						max={7}
+						step={1}
+						onChange={(value) => setCornerRadius(value)}
+					/>
+					<ControlRangeItem
+						label='Stroke width'
+						value={strokeWidth}
+						min={0.25}
+						max={5}
+						step={0.25}
+						onChange={(value) => setStrokeWidth(value)}
+					/>
+					<ControlRangeItem
+						label='Size'
+						value={size}
+						min={16}
+						max={120}
+						step={1}
+						onChange={(value) => setSize(value)}
+					/>
 				</div>
 				{/* preview */}
-				<div className='relative flex h-full flex-col justify-between overflow-hidden bg-white/30 p-8 lg:col-span-2 dark:bg-zinc-800/40'>
+				<div className='relative flex h-full flex-col justify-between overflow-hidden bg-white/30 p-6 lg:col-span-2 dark:bg-zinc-800/40'>
 					<InfiniteScrollGrid icons={icons} />
 				</div>
 			</div>

@@ -33,7 +33,7 @@ function App() {
 									<Route path='/icons' element={<Icons />} />
 								</Routes>
 							</div>
-							<footer className='border border-dashed border-zinc-300 p-8 dark:border-zinc-700'>
+							<footer className='mb-4 border border-dashed border-zinc-300 p-8 dark:border-zinc-700'>
 								<p className='text-sm text-zinc-500 dark:text-zinc-400'>
 									Released under the ISC License
 								</p>

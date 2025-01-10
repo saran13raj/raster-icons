@@ -2,7 +2,7 @@ import { motion } from 'motion/react';
 import React from 'react';
 
 import { ParsedIcon } from '../types';
-import RasterIcon from './RasterIcon';
+import RasterIcon from './raster-icon';
 
 const gridColumns = 5;
 
@@ -17,7 +17,7 @@ const InfiniteScrollGrid: React.FC<{
 						const randomStartIndex = Math.floor(colIndex * 5);
 
 						return (
-							<div key={colIndex} className='h-[25rem] overflow-hidden'>
+							<div key={colIndex} className='h-full max-h-[28rem] overflow-hidden'>
 								<motion.div
 									className='flex flex-col gap-4'
 									animate={{

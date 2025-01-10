@@ -31,13 +31,18 @@ input[type='color']::-moz-color-swatch {
 }
 
 .raster-icon {
-	will-change: width, height, stroke-width, stroke;
-	color: var(--customize-color, currentColor);
-	stroke-width: var(--customize-strokeWidth, 2);
 	width: calc(var(--customize-size, 24) * 1px);
 	height: calc(var(--customize-size, 24) * 1px);
 }
 
-.raster-icon > * {
+.raster-icon,
+.raster-icon-large {
+	will-change: width, height, stroke-width, stroke;
+	color: var(--customize-color, currentColor);
+	stroke-width: var(--customize-strokeWidth, 2);
+}
+
+.raster-icon > *,
+.raster-icon-large > * {
 	rx: var(--customize-cornerRadius, 2);
 }

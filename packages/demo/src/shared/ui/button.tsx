@@ -1,5 +1,5 @@
-import clsx from 'clsx';
 import React from 'react';
+import { cn } from '../utils';
 
 export const Button: React.FC<{
 	onClick?: (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
@@ -21,9 +21,9 @@ export const Button: React.FC<{
 	return (
 		<button
 			disabled={disabled}
-			className={clsx(
+			className={cn(
 				rounded ? 'rounded-full' : 'rounded-md',
-				'group inline-flex h-[40px] items-center justify-center gap-2 whitespace-nowrap border border-zinc-800 bg-zinc-950 px-3 py-2.5 text-sm font-medium hover:bg-zinc-900 focus:outline-none',
+				'group inline-flex h-[40px] items-center justify-center gap-2 whitespace-nowrap border border-zinc-800 bg-zinc-900 px-3 py-2.5 text-sm font-medium text-black hover:bg-zinc-900 focus:outline-none dark:text-white',
 				customClass
 			)}
 			onClick={(e) => onClick && onClick(e)}

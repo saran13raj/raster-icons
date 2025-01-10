@@ -1,10 +1,11 @@
 import React from 'react';
 import { Tooltip as ReactTooltip } from 'react-tooltip';
 
-import { Button } from '../../shared/ui/button';
 import { getIconNodes } from '../../shared/utils';
 import { ParsedIcon } from '../../shared/types';
-import RasterIcon from '../../shared/ui/RasterIcon';
+import RasterIcon from '../../shared/ui/raster-icon';
+import { IconDetails } from '../../widgets/icon-details';
+import { ControlsSidebar } from '../../widgets/controls-sidebar';
 
 export const Icons: React.FC = () => {
 	const [strokeWidth, setStrokeWidth] = React.useState(0.25);
@@ -14,6 +15,10 @@ export const Icons: React.FC = () => {
 	const [searchText, setSearchText] = React.useState('');
 	const [icons, setIcons] = React.useState<ParsedIcon[]>([]);
 	const [filteredIcons, setFilteredIcons] = React.useState<ParsedIcon[]>([]);
+	const [showIconDetails, setShowIconDetails] = React.useState(false);
+	const [selectedIcon, setSelectedIcon] = React.useState<ParsedIcon | null>(
+		null
+	);
 
 	React.useEffect(() => {
 		const fetchIcons = async () => {
@@ -22,6 +27,10 @@ export const Icons: React.FC = () => {
 			setFilteredIcons(icons);
 		};
 		fetchIcons();
+
+		return () => {
+			setShowIconDetails(false);
+		};
 	}, []);
 
 	React.useEffect(() => {
@@ -58,78 +67,18 @@ export const Icons: React.FC = () => {
 	}, [cornerRadius]);
 
 	return (
-		<div className='flex flex-row'>
-			<div className='flex flex-col border border-b-0 border-dashed border-zinc-300 p-4 lg:w-1/4 dark:border-zinc-700'>
-				<div className='relative flex flex-col justify-start gap-4 rounded-md bg-zinc-800/40 px-4 py-2 text-black dark:text-white'>
-					<div>
-						<p className='text-base leading-tight text-black md:text-lg lg:text-xl dark:text-white'>
-							Controls
-						</p>
-					</div>
-					<div className='-mt-3 flex items-center justify-between'>
-						<label className='flex justify-between text-xs font-medium'>Color</label>
-						<Button
-							onClick={() => {}}
-							label={color}
-							customClass='cursor-default text-xs w-[9rem] justify-between'
-						>
-							<input
-								type='color'
-								value={color}
-								onChange={(e) => setColor(e.target.value)}
-								className='flex h-6 w-6 cursor-pointer rounded-full'
-								style={{ backgroundColor: color }}
-							/>
-						</Button>
-					</div>
-					<div className='-mb-2'>
-						<label className='flex justify-between text-xs font-medium'>
-							Corner radius
-							<span className='text-zinc-500'>{cornerRadius}px</span>
-						</label>
-						<input
-							type='range'
-							min='0'
-							max='7'
-							step='1'
-							value={cornerRadius}
-							onChange={(e) => setCornerRadius(Number(e.target.value))}
-							className='range-sm accent-primary1 mb-6 h-1 w-full cursor-pointer appearance-none rounded-lg bg-zinc-700'
-						/>
-					</div>
-					<div className='-mb-2'>
-						<label className='flex justify-between text-xs font-medium'>
-							Stroke width
-							<span className='text-zinc-500'>{strokeWidth}px</span>
-						</label>
-						<input
-							type='range'
-							min='0.25'
-							max='3'
-							step='0.25'
-							value={strokeWidth}
-							onChange={(e) => setStrokeWidth(Number(e.target.value))}
-							className='range-sm accent-primary1 mb-6 h-1 w-full cursor-pointer appearance-none rounded-lg bg-zinc-700'
-						/>
-					</div>
-					<div className=''>
-						<label className='flex justify-between text-xs font-medium'>
-							Size
-							<span className='text-zinc-500'>{size}px</span>
-						</label>
-						<input
-							type='range'
-							min='16'
-							max='50'
-							step='1'
-							value={size}
-							onChange={(e) => setSize(Number(e.target.value))}
-							className='range-sm accent-primary1 mb-6 h-1 w-full cursor-pointer appearance-none rounded-lg bg-zinc-700'
-						/>
-					</div>
-				</div>
-			</div>
-			<div className='flex flex-col gap-4 p-6 lg:w-3/4'>
+		<div className='flex flex-col md:flex-row'>
+			<ControlsSidebar
+				color={color}
+				setColor={setColor}
+				cornerRadius={cornerRadius}
+				setCornerRadius={setCornerRadius}
+				strokeWidth={strokeWidth}
+				setStrokeWidth={setStrokeWidth}
+				size={size}
+				setSize={setSize}
+			/>
+			<div className='mb-10 flex flex-col gap-4 md:mb-0 md:p-6 lg:w-3/4'>
 				<div className='w-full'>
 					<input
 						value={searchText}
@@ -150,11 +99,20 @@ export const Icons: React.FC = () => {
 							data-tooltip-id='raster-tooltip'
 							data-tooltip-content={icon.name}
 							data-tooltip-offset={-2}
+							onClick={() => {
+								setSelectedIcon(icon);
+								setShowIconDetails(true);
+							}}
 						>
 							<RasterIcon iconNode={icon.node} />
 						</div>
 					))}
 				</div>
+				<IconDetails
+					showDrawer={showIconDetails}
+					setShowDrawer={setShowIconDetails}
+					icon={selectedIcon}
+				/>
 			</div>
 			<ReactTooltip
 				id='raster-tooltip'
