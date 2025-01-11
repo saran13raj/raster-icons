@@ -133,7 +133,7 @@ export const Home: React.FC = () => {
 						<Button
 							onClick={() => {}}
 							label={color}
-							customClass='cursor-default text-xs w-[9rem] justify-between'
+							className='w-[9rem] cursor-default justify-between text-xs'
 						>
 							<input
 								type='color'

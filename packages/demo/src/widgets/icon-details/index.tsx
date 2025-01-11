@@ -82,7 +82,7 @@ export const IconDetails: React.FC<{
 								<Button
 									onClick={() => setShowDrawer(false)}
 									label=''
-									customClass=''
+									className=''
 									icon={<XIcon className='h-6 w-6' />}
 									ariaLabel='close'
 								/>
@@ -93,14 +93,14 @@ export const IconDetails: React.FC<{
 										onCopySVG();
 									}}
 									label='Copy SVG'
-									customClass=''
+									className=''
 								/>
 								<Button
 									onClick={() => {
 										onCopyJSX();
 									}}
 									label='Copy JSX'
-									customClass=''
+									className=''
 								/>
 							</div>
 						</div>

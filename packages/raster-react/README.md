@@ -12,7 +12,15 @@ Additional props can be passed to adjust the icon:
 import { Heart } from 'raster-react';
 
 const App = () => {
-	return <Heart color='#f54' size={13} radius={2} strokeWidth={1} />;
+	return (
+		<Heart
+			color='#f54'
+			size={13}
+			radius={2}
+			strokeWidth={1}
+			className='h-13 w-13'
+		/>
+	);
 };
 
 export default App;

@@ -1,11 +1,13 @@
 import { Toaster } from 'sonner';
 import { Link, Route, Routes, useLocation } from 'react-router-dom';
+import { ArrowUpRightIcon, GithubIcon } from 'raster-react';
 
 import { Home } from './pages/home';
 import { Icons } from './pages/icons';
 import { RasterLogo } from './shared/ui/raster-logo';
 import { Guide } from './pages/guide';
 import { cn } from './shared/utils';
+import { Button } from './shared/ui/button';
 
 const routes = [
 	{ link: '/icons', label: 'Icons' },
@@ -29,7 +31,7 @@ function App() {
 										<RasterLogo customClass='h-[4rem] w-[4rem]' />
 										<div className=''>Raster</div>
 									</Link>
-									<div className='flex gap-6'>
+									<div className='flex items-center gap-6'>
 										{routes.map((route) => (
 											<Link
 												className={cn(
@@ -44,6 +46,12 @@ function App() {
 												<div className='text-sm'>{route.label}</div>
 											</Link>
 										))}
+										<a
+											href='https://github.com/saran13raj/raster-icons/issues'
+											target='_blank'
+										>
+											<GithubIcon className='h-7 w-7 text-black dark:text-white' />
+										</a>
 									</div>
 								</div>
 								<Routes location={location}>
@@ -53,6 +61,27 @@ function App() {
 								</Routes>
 							</div>
 							<footer className='mb-4 border border-dashed border-zinc-300 p-8 dark:border-zinc-700'>
+								<div className='mb-2 flex gap-4'>
+									<a
+										href='https://github.com/saran13raj/raster-icons/issues'
+										target='_blank'
+									>
+										<Button
+											label='Issues'
+											className='gap-1 border-0 bg-transparent p-0 hover:bg-transparent'
+										>
+											<ArrowUpRightIcon className='h-5 w-5' />
+										</Button>
+									</a>
+									<a href='https://github.com/saran13raj/raster-icons' target='_blank'>
+										<Button
+											label='GitHub'
+											className='gap-1 border-0 bg-transparent p-0 hover:bg-transparent'
+										>
+											<ArrowUpRightIcon className='h-5 w-5' />
+										</Button>
+									</a>
+								</div>
 								<p className='text-sm text-zinc-500 dark:text-zinc-400'>
 									Released under the ISC License
 								</p>

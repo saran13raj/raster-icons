@@ -1,50 +1,37 @@
-# React + TypeScript + Vite
+## How to use
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Raster is built with ES Modules, so it's completely tree-shakable.
 
-Currently, two official plugins are available:
+Each icon can be imported as a React component, which renders an inline SVG element. This way, only the icons that are imported into your project are included in the final bundle. The rest of the icons are tree-shaken away.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### Example
 
-## Expanding the ESLint configuration
+Additional props can be passed to adjust the icon:
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+```jsx
+import { Heart } from 'raster-react';
 
-- Configure the top-level `parserOptions` property like this:
+const App = () => {
+	return (
+		<Heart
+			color='#f54'
+			size={13}
+			radius={2}
+			strokeWidth={1}
+			className='h-13 w-13'
+		/>
+	);
+};
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+export default App;
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+## Props
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
-
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+| name          | type     | default      |
+| ------------- | -------- | ------------ |
+| `size`        | _number_ | 24           |
+| `color`       | _string_ | currentColor |
+| `strokeWidth` | _number_ | 2            |
+| `radius`      | _number_ | 1            |
+| `className`   | _string_ |              |
