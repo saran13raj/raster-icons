@@ -3,8 +3,6 @@ import { SettingsIcon } from 'raster-react';
 
 import { Button } from '../../shared/ui/button';
 import InfiniteScrollGrid from '../../shared/ui/infinite-scroll-grid';
-import { getIconNodes } from '../../shared/utils';
-import { ParsedIcon } from '../../shared/types';
 import { ControlRangeItem } from '../../widgets/controls-sidebar';
 
 export const Home: React.FC = () => {
@@ -12,15 +10,6 @@ export const Home: React.FC = () => {
 	const [cornerRadius, setCornerRadius] = React.useState(1);
 	const [size, setSize] = React.useState(80);
 	const [color, setColor] = React.useState('#FEFEFE');
-	const [icons, setIcons] = React.useState<ParsedIcon[]>([]);
-
-	React.useEffect(() => {
-		const fetchIcons = async () => {
-			const icons = await getIconNodes();
-			setIcons(icons);
-		};
-		fetchIcons();
-	}, []);
 
 	React.useEffect(() => {
 		document.documentElement.style.setProperty('--customize-color', color);
@@ -155,7 +144,7 @@ export const Home: React.FC = () => {
 					<ControlRangeItem
 						label='Stroke width'
 						value={strokeWidth}
-						min={0.25}
+						min={0}
 						max={5}
 						step={0.25}
 						onChange={(value) => setStrokeWidth(value)}
@@ -171,7 +160,7 @@ export const Home: React.FC = () => {
 				</div>
 				{/* preview */}
 				<div className='relative flex h-full flex-col justify-between overflow-hidden bg-white/30 p-6 lg:col-span-2 dark:bg-zinc-800/40'>
-					<InfiniteScrollGrid icons={icons} />
+					<InfiniteScrollGrid />
 				</div>
 			</div>
 		</>

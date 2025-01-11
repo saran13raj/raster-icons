@@ -65,7 +65,7 @@ export const ControlsSidebar: React.FC<{
 					<ControlRangeItem
 						label='Stroke width'
 						value={strokeWidth}
-						min={0.25}
+						min={0}
 						max={5}
 						step={0.25}
 						onChange={(value) => setStrokeWidth(value)}
@@ -130,7 +130,7 @@ export const ControlsSidebar: React.FC<{
 							<ControlRangeItem
 								label='Stroke width'
 								value={strokeWidth}
-								min={0.25}
+								min={0}
 								max={5}
 								step={0.25}
 								onChange={(value) => setStrokeWidth(value)}

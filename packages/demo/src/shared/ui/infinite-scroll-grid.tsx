@@ -1,14 +1,12 @@
 import { motion } from 'motion/react';
 import React from 'react';
 
-import { ParsedIcon } from '../types';
+import { getExportedIcons } from '../utils';
 import RasterIcon from './raster-icon';
 
 const gridColumns = 5;
 
-const InfiniteScrollGrid: React.FC<{
-	icons: ParsedIcon[];
-}> = React.memo(({ icons = [] }) => {
+const InfiniteScrollGrid: React.FC = React.memo(() => {
 	return (
 		<div className='h-full w-full'>
 			<div className='mx-auto max-w-4xl'>
@@ -29,13 +27,13 @@ const InfiniteScrollGrid: React.FC<{
 										ease: 'linear'
 									}}
 								>
-									{[...icons.slice(randomStartIndex)].map((icon, index) => (
+									{[...getExportedIcons().slice(randomStartIndex)].map((icon, index) => (
 										<div
-											key={`${colIndex}-${index}-${icon.name}`}
+											key={`${colIndex}-${index}`}
 											className='flex aspect-square w-full items-center justify-center'
 											aria-label={icon.name}
 										>
-											<RasterIcon iconNode={icon.node} />
+											<RasterIcon Icon={icon.Icon} />
 										</div>
 									))}
 								</motion.div>

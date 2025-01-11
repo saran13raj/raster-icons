@@ -71,7 +71,7 @@ export type { IconProps } from './types';
 
 		const typesContent = `import { SVGProps } from 'react';
 
-	export interface IconProps extends Omit<SVGProps<SVGSVGElement>, 'color' | 'strokeWidth' | 'className'> {
+export interface IconProps extends Omit<SVGProps<SVGSVGElement>, 'color' | 'strokeWidth' | 'className'> {
 	/** Color of the icon - accepts any valid CSS color value */
 	color?: string;
 	/** Corner radius of the blocks in pixels */
@@ -82,7 +82,8 @@ export type { IconProps } from './types';
 	strokeWidth?: number;
 	/** CSS classes to apply to the icon (e.g. Tailwind classes) */
 	className?: string;
-}`;
+}
+`;
 		fs.writeFileSync('src/types.ts', typesContent);
 		console.log(`>>> raster-react: Build ended`);
 	} catch (error) {

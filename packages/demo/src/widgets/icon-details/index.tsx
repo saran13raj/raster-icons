@@ -4,8 +4,8 @@ import { XIcon } from 'raster-react';
 
 import { Drawer } from '../../shared/ui/drawer';
 import { ParsedIcon } from '../../shared/types';
-import RasterIconLarge from '../../shared/ui/raster-icon-large';
 import { Button } from '../../shared/ui/button';
+import RasterIcon from '../../shared/ui/raster-icon';
 
 export const IconDetails: React.FC<{
 	showDrawer: boolean;
@@ -18,7 +18,7 @@ export const IconDetails: React.FC<{
 				{icon && (
 					<div className='flex'>
 						<div className='rounded-lg bg-zinc-900 shadow-xl'>
-							<RasterIconLarge iconNode={icon.node} height={256} width={256} />
+							<RasterIcon Icon={icon.Icon} className='h-[15rem] w-[15rem]' />
 						</div>
 						<div className='ml-8 flex w-full flex-col gap-2'>
 							<p className='flex w-full items-center justify-between text-black md:text-lg lg:text-xl dark:text-white'>
@@ -27,7 +27,7 @@ export const IconDetails: React.FC<{
 									onClick={() => setShowDrawer(false)}
 									label=''
 									customClass=''
-									icon={<XIcon className='h-10 w-10' />}
+									icon={<XIcon className='h-6 w-6' />}
 								/>
 							</p>
 							<div className=''>

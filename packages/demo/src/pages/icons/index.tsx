@@ -1,11 +1,11 @@
 import React from 'react';
 import { Tooltip as ReactTooltip } from 'react-tooltip';
 
-import { getIconNodes } from '../../shared/utils';
+import { getExportedIcons } from '../../shared/utils';
 import { ParsedIcon } from '../../shared/types';
-import RasterIcon from '../../shared/ui/raster-icon';
 import { IconDetails } from '../../widgets/icon-details';
 import { ControlsSidebar } from '../../widgets/controls-sidebar';
+import RasterIcon from '../../shared/ui/raster-icon';
 
 export const Icons: React.FC = () => {
 	const [strokeWidth, setStrokeWidth] = React.useState(0.25);
@@ -13,33 +13,21 @@ export const Icons: React.FC = () => {
 	const [size, setSize] = React.useState(50);
 	const [color, setColor] = React.useState('#FEFEFE');
 	const [searchText, setSearchText] = React.useState('');
-	const [icons, setIcons] = React.useState<ParsedIcon[]>([]);
 	const [filteredIcons, setFilteredIcons] = React.useState<ParsedIcon[]>([]);
 	const [showIconDetails, setShowIconDetails] = React.useState(false);
 	const [selectedIcon, setSelectedIcon] = React.useState<ParsedIcon | null>(
 		null
 	);
 
-	React.useEffect(() => {
-		const fetchIcons = async () => {
-			const icons = await getIconNodes();
-			setIcons(icons);
-			setFilteredIcons(icons);
-		};
-		fetchIcons();
-
-		return () => {
-			setShowIconDetails(false);
-		};
-	}, []);
+	const allIcons = React.useMemo<ParsedIcon[]>(() => getExportedIcons(), []);
 
 	React.useEffect(() => {
 		const filteredValues =
-			icons.filter((icon) =>
-				icon.name.replace('-', '').includes(searchText.toLowerCase())
+			allIcons.filter((icon) =>
+				icon.name.toLowerCase().includes(searchText.toLowerCase())
 			) ?? [];
 		setFilteredIcons(filteredValues);
-	}, [icons, searchText]);
+	}, [allIcons, searchText]);
 
 	React.useEffect(() => {
 		document.documentElement.style.setProperty('--customize-color', color);
@@ -91,22 +79,11 @@ export const Icons: React.FC = () => {
 				</div>
 
 				<div className='flex flex-wrap gap-4'>
-					{filteredIcons.map((icon, index) => (
-						<div
-							key={`${index}-${icon.name}`}
-							className='flex aspect-square h-[52px] w-[52px] items-center justify-center overflow-hidden rounded-sm bg-zinc-800/40 hover:cursor-pointer hover:bg-zinc-700/70'
-							aria-label={icon.name}
-							data-tooltip-id='raster-tooltip'
-							data-tooltip-content={icon.name}
-							data-tooltip-offset={-2}
-							onClick={() => {
-								setSelectedIcon(icon);
-								setShowIconDetails(true);
-							}}
-						>
-							<RasterIcon iconNode={icon.node} />
-						</div>
-					))}
+					<IconGallery
+						filteredIcons={filteredIcons}
+						setSelectedIcon={setSelectedIcon}
+						setShowIconDetails={setShowIconDetails}
+					/>
 				</div>
 				<IconDetails
 					showDrawer={showIconDetails}
@@ -129,3 +106,30 @@ export const Icons: React.FC = () => {
 		</div>
 	);
 };
+
+const IconGallery: React.FC<{
+	filteredIcons: ParsedIcon[];
+	setSelectedIcon: (value: ParsedIcon | null) => void;
+	setShowIconDetails: (value: boolean) => void;
+}> = React.memo(({ filteredIcons, setSelectedIcon, setShowIconDetails }) => {
+	return (
+		<>
+			{filteredIcons.map((icon, index) => (
+				<div
+					key={`${index}-${icon.name}`}
+					className='flex aspect-square h-[52px] w-[52px] items-center justify-center overflow-hidden rounded-sm bg-zinc-800/40 hover:cursor-pointer hover:bg-zinc-700/70'
+					aria-label={icon.name}
+					data-tooltip-id='raster-tooltip'
+					data-tooltip-content={icon.name}
+					data-tooltip-offset={-2}
+					onClick={() => {
+						setSelectedIcon(icon);
+						setShowIconDetails(true);
+					}}
+				>
+					<RasterIcon Icon={icon.Icon} />
+				</div>
+			))}
+		</>
+	);
+});
