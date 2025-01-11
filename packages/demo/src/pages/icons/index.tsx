@@ -66,7 +66,7 @@ export const Icons: React.FC = () => {
 				size={size}
 				setSize={setSize}
 			/>
-			<div className='flex flex-col gap-4 border-l border-r border-t border-dashed border-zinc-300 p-2 md:mb-0 md:border-l-0 md:p-6 lg:w-3/4 dark:border-zinc-700'>
+			<div className='flex flex-col gap-4 border-l border-r border-t border-dashed border-zinc-300 p-8 md:mb-0 md:border-l-0 lg:w-3/4 dark:border-zinc-700'>
 				<div className='w-full'>
 					<input
 						value={searchText}

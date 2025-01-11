@@ -27,14 +27,15 @@ export const ControlsSidebar: React.FC<{
 		<div className='border-zinc-300 lg:w-1/4 lg:border lg:border-b-0 lg:border-dashed dark:border-zinc-700'>
 			{/* Hamburger Menu Icon */}
 			<button
-				className='-mt-8 mb-4 p-2 text-black lg:hidden dark:text-white'
+				className='-mt-6 mb-4 flex items-center p-2 text-black lg:hidden dark:text-white'
 				onClick={() => setIsOpen(!isOpen)}
 			>
 				<MenuIcon size={36} />
+				Menu
 			</button>
 
 			{/* Sidebar for large screens */}
-			<div className='hidden w-full flex-col p-4 lg:flex'>
+			<div className='hidden w-full flex-col p-8 lg:flex'>
 				<div className='relative flex flex-col justify-start gap-4 rounded-md bg-zinc-800/40 px-4 py-2 text-black dark:text-white'>
 					<p className='text-base leading-tight text-black md:text-lg lg:text-xl dark:text-white'>
 						Controls
@@ -89,9 +90,11 @@ export const ControlsSidebar: React.FC<{
 						<div className='flex flex-col gap-4'>
 							<p className='flex items-center justify-between text-base leading-tight md:text-lg lg:text-xl'>
 								Controls
-								<button className='' onClick={() => setIsOpen(false)}>
-									<XIcon size={30} />
-								</button>
+								<Button
+									onClick={() => setIsOpen(false)}
+									ariaLabel='close'
+									icon={<XIcon size={30} />}
+								/>
 							</p>
 							{/* <ControlItem label='Color' value={color}>
 								<input

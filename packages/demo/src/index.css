@@ -46,3 +46,97 @@ input[type='color']::-moz-color-swatch {
 .raster-icon-custom > * {
 	rx: var(--customize-cornerRadius, 2);
 }
+
+.guide-container {
+	font-size: 0.875rem;
+	line-height: 1.5rem;
+}
+
+.guide-container > h1 {
+	font-size: 1.5rem;
+	font-weight: 600;
+	padding: 1.3rem 0;
+}
+
+.guide-container > h2 {
+	font-size: 1.3rem;
+	font-weight: 500;
+	padding: 1rem 0;
+	border-top: 1px dashed #3f3f46;
+	margin-top: 1rem;
+}
+
+.guide-container > h3 {
+	font-size: 1rem;
+	font-weight: 500;
+	padding: 0.8rem 0;
+}
+
+.guide-container > hr {
+	border: none;
+	border-top: 1px dashed #f54;
+	margin-top: 2.5rem;
+	margin-bottom: 2rem;
+}
+
+.guide-container > p {
+	margin-bottom: 0.5rem;
+	color: #c8c8c8;
+}
+
+.guide-container > a {
+	text-decoration: underline;
+	color: #f54;
+}
+
+.guide-container > p > a {
+	text-decoration: underline;
+	color: #f54;
+}
+
+.guide-container > pre {
+	padding: 1rem;
+	margin-bottom: 1rem;
+	background: #202124;
+	border-radius: 0.375rem;
+}
+
+.guide-container > pre > code {
+	text-wrap: initial;
+	font-size: 0.75rem;
+}
+
+.guide-container table {
+	font-size: 0.75rem;
+}
+
+.guide-container tr {
+	background: #202124;
+}
+
+.guide-container tbody > tr:nth-child(even) {
+	background: #202124;
+}
+
+.guide-container tbody > tr:nth-child(odd) {
+	background: #29292b;
+}
+
+.guide-container th {
+	text-align: left;
+	padding: 0.5rem 1rem;
+	border: 1px dashed #3f3f46;
+}
+
+.guide-container td {
+	text-align: left;
+	padding: 0.5rem 1rem;
+	border: 1px dashed #3f3f46;
+}
+
+.guide-container td > code {
+	background: #18181b;
+	padding: 0.4rem;
+	border-radius: 0.375rem;
+	color: #f54;
+}

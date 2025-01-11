@@ -1,11 +1,19 @@
 import { Toaster } from 'sonner';
-import { Link, Route, Routes } from 'react-router-dom';
+import { Link, Route, Routes, useLocation } from 'react-router-dom';
 
 import { Home } from './pages/home';
 import { Icons } from './pages/icons';
 import { RasterLogo } from './shared/ui/raster-logo';
+import { Guide } from './pages/guide';
+import { cn } from './shared/utils';
+
+const routes = [
+	{ link: '/icons', label: 'Icons' },
+	{ link: '/guide', label: 'Guide' }
+];
 
 function App() {
+	const location = useLocation();
 	return (
 		<>
 			<div className='relative mx-auto flex min-h-screen flex-col border-dashed border-zinc-300 bg-[#f7f7f7] 2xl:max-w-7xl 2xl:border-x dark:border-zinc-700 dark:bg-[#1a1c1f]'>
@@ -22,23 +30,26 @@ function App() {
 										<div className=''>Raster</div>
 									</Link>
 									<div className='flex gap-6'>
-										<Link
-											className='w-fit items-center text-center font-semibold text-black lg:text-base dark:text-white'
-											to='/icons'
-										>
-											<div className='text-sm'>Icons</div>
-										</Link>
-										<Link
-											className='w-fit items-center text-center font-semibold text-black lg:text-base dark:text-white'
-											to='/guide'
-										>
-											<div className='text-sm'>Guide</div>
-										</Link>
+										{routes.map((route) => (
+											<Link
+												className={cn(
+													location.pathname === route.link
+														? 'text-primary1'
+														: 'text-black dark:text-white',
+													'w-fit items-center text-center font-semibold lg:text-base'
+												)}
+												to={route.link}
+												key={route.link}
+											>
+												<div className='text-sm'>{route.label}</div>
+											</Link>
+										))}
 									</div>
 								</div>
 								<Routes location={location}>
 									<Route path='/' element={<Home />} />
 									<Route path='/icons' element={<Icons />} />
+									<Route path='/guide' element={<Guide />} />
 								</Routes>
 							</div>
 							<footer className='mb-4 border border-dashed border-zinc-300 p-8 dark:border-zinc-700'>

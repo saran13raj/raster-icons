@@ -4,6 +4,7 @@ import { cn } from '../utils';
 export const Button: React.FC<{
 	onClick?: (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
 	label?: string;
+	ariaLabel?: string;
 	customClass?: string;
 	disabled?: boolean;
 	icon?: React.ReactElement;
@@ -12,6 +13,7 @@ export const Button: React.FC<{
 }> = ({
 	onClick,
 	label,
+	ariaLabel,
 	customClass = '',
 	disabled = false,
 	icon,
@@ -27,6 +29,7 @@ export const Button: React.FC<{
 				customClass
 			)}
 			onClick={(e) => onClick && onClick(e)}
+			aria-label={(ariaLabel || label) ?? ''}
 		>
 			{icon && <div className='flex'>{icon}</div>}
 			{label}

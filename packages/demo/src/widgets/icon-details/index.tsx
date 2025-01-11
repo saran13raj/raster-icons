@@ -71,7 +71,10 @@ export const IconDetails: React.FC<{
 				{icon && (
 					<div className='flex'>
 						<div className='rounded-lg bg-zinc-900 shadow-xl'>
-							<RasterIcon Icon={icon.Icon} className='h-[15rem] w-[15rem]' />
+							<RasterIcon
+								Icon={icon.Icon}
+								className='h-[8rem] w-[8rem] md:h-[15rem] md:w-[15rem]'
+							/>
 						</div>
 						<div className='ml-8 flex w-full flex-col gap-2'>
 							<p className='flex w-full items-center justify-between text-black md:text-lg lg:text-xl dark:text-white'>
@@ -81,6 +84,7 @@ export const IconDetails: React.FC<{
 									label=''
 									customClass=''
 									icon={<XIcon className='h-6 w-6' />}
+									ariaLabel='close'
 								/>
 							</p>
 							<div className='flex gap-4'>
