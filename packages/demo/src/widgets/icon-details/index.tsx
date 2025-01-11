@@ -1,5 +1,6 @@
 import React from 'react';
 import { toast } from 'sonner';
+import { XIcon } from 'raster-react';
 
 import { Drawer } from '../../shared/ui/drawer';
 import { ParsedIcon } from '../../shared/types';
@@ -26,110 +27,7 @@ export const IconDetails: React.FC<{
 									onClick={() => setShowDrawer(false)}
 									label=''
 									customClass=''
-									icon={
-										<svg
-											xmlns='http://www.w3.org/2000/svg'
-											width='24'
-											height='24'
-											viewBox='0 0 256 256'
-											fill='currentColor'
-											stroke='currentColor'
-											strokeWidth='2'
-											strokeLinecap='round'
-											strokeLinejoin='round'
-										>
-											<rect
-												width='14'
-												height='14'
-												transform='matrix(0 -1 -1 0 120 152)'
-											></rect>
-											<rect
-												width='14'
-												height='14'
-												transform='matrix(0 -1 -1 0 104 168)'
-											></rect>
-											<rect
-												width='14'
-												height='14'
-												transform='matrix(0 -1 -1 0 184 184)'
-											></rect>
-											<rect
-												width='14'
-												height='14'
-												transform='matrix(0 -1 -1 0 88 184)'
-											></rect>
-											<rect
-												width='14'
-												height='14'
-												transform='matrix(0 -1 -1 0 168 104)'
-											></rect>
-											<rect
-												width='14'
-												height='14'
-												transform='matrix(0 -1 -1 0 184 88)'
-											></rect>
-											<rect
-												width='14'
-												height='14'
-												transform='matrix(0 -1 -1 0 200 72)'
-											></rect>
-											<rect
-												width='14'
-												height='14'
-												transform='matrix(0 -1 -1 0 200 200)'
-											></rect>
-											<rect
-												width='14'
-												height='14'
-												transform='matrix(0 -1 -1 0 152 120)'
-											></rect>
-											<rect
-												width='14'
-												height='14'
-												transform='matrix(0 -1 -1 0 152 152)'
-											></rect>
-											<rect
-												width='14'
-												height='14'
-												transform='matrix(0 -1 -1 0 136 136)'
-											></rect>
-											<rect
-												width='14'
-												height='14'
-												transform='matrix(0 -1 -1 0 120 120)'
-											></rect>
-											<rect
-												width='14'
-												height='14'
-												transform='matrix(0 -1 -1 0 136 136)'
-											></rect>
-											<rect
-												width='14'
-												height='14'
-												transform='matrix(0 -1 -1 0 168 168)'
-											></rect>
-											<rect
-												width='14'
-												height='14'
-												transform='matrix(0 -1 -1 0 88 88)'
-											></rect>
-											<rect
-												width='14'
-												height='14'
-												transform='matrix(0 -1 -1 0 72 72)'
-											></rect>
-											<rect
-												width='14'
-												height='14'
-												transform='matrix(0 -1 -1 0 72 200)'
-											></rect>
-											<rect
-												width='14'
-												height='14'
-												transform='matrix(0 -1 -1 0 104 104)'
-											></rect>
-										</svg>
-									}
+									icon={<XIcon className='h-10 w-10' />}
 								/>
 							</p>
 							<div className=''>

@@ -14,13 +14,14 @@ async function buildIcons() {
 		}
 
 		const svgFiles = await glob(path.resolve(__dirname, '../../../icons/*.svg'));
-		console.log(`raster-react: found ${svgFiles.length} SVG files`);
+		console.log(`>>> raster-react: found ${svgFiles.length} SVG files to build`);
 
 		let rasterReactContent = `import React from 'react';
 import { IconProps } from './types';
 
 `;
 
+		console.log(`>>> raster-react: Starting build`);
 		for (const svgFile of svgFiles) {
 			const basename = path.basename(svgFile, '.svg');
 			const componentName =
@@ -30,23 +31,20 @@ import { IconProps } from './types';
 					.join('') + 'Icon';
 
 			const svgContent = fs.readFileSync(svgFile, 'utf-8');
-
 			try {
 				const componentCode = await transform(
 					svgContent,
 					{
-						icon: true,
+						icon: 24,
 						plugins: ['@svgr/plugin-jsx'],
 						typescript: true,
-
+						replaceAttrValues: { rx: '{radius}' },
 						template: (variables, { tpl }) => {
 							return tpl`
 									export const ${variables.componentName}: React.FC<IconProps> = ({
-									  color = 'currentColor',
-									  radius = 0,
-									  stroke = 2,
-									  className = '',
-									  ...props
+										size,
+									  	radius,
+									  	...props
 									}) => {
 										return (
 											${variables.jsx}
@@ -73,17 +71,20 @@ export type { IconProps } from './types';
 
 		const typesContent = `import { SVGProps } from 'react';
 
-export interface IconProps extends Omit<SVGProps<SVGSVGElement>, 'color' | 'stroke' | 'className'> {
-  /** Color of the icon - accepts any valid CSS color value */
-  color?: string;
-  /** Corner radius of the blocks in pixels */
-  radius?: number;
-  /** Stroke width of the blocks */
-  stroke?: number;
-  /** CSS classes to apply to the icon (e.g. Tailwind classes) */
-  className?: string;
+	export interface IconProps extends Omit<SVGProps<SVGSVGElement>, 'color' | 'strokeWidth' | 'className'> {
+	/** Color of the icon - accepts any valid CSS color value */
+	color?: string;
+	/** Corner radius of the blocks in pixels */
+	radius?: number;
+	/** Size of the icon */
+	size?: number;
+	/** Stroke width of the blocks */
+	strokeWidth?: number;
+	/** CSS classes to apply to the icon (e.g. Tailwind classes) */
+	className?: string;
 }`;
 		fs.writeFileSync('src/types.ts', typesContent);
+		console.log(`>>> raster-react: Build ended`);
 	} catch (error) {
 		console.error('raster-react build error:', error);
 		process.exit(1);

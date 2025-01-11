@@ -1,4 +1,5 @@
 import React from 'react';
+import { SettingsIcon } from 'raster-react';
 
 import { Button } from '../../shared/ui/button';
 import InfiniteScrollGrid from '../../shared/ui/infinite-scroll-grid';
@@ -48,17 +49,14 @@ export const Home: React.FC = () => {
 
 	return (
 		<>
-			<div className='flex flex-col border border-dashed border-zinc-300 p-8 lg:flex-row dark:border-zinc-700'>
+			<div className='flex flex-col border border-dashed border-zinc-300 p-8 text-black lg:flex-row dark:border-zinc-700 dark:text-white'>
 				<div className='flex flex-col gap-2'>
-					<div className='mb-1 flex w-fit items-center gap-2 rounded-sm bg-zinc-700/60 px-2 py-[0.5px] text-black dark:text-white'>
-						<p
-							className='text-sm font-medium text-black dark:text-white'
-							data-text='version-0.0.1'
-						>
+					<div className='mb-1 flex w-fit items-center gap-2 rounded-sm bg-zinc-700/60 px-2 py-[0.5px]'>
+						<p className='text-sm font-medium' data-text='version-0.0.1'>
 							v0.0.1
 						</p>
 					</div>
-					<h1 className='font-doto text-balance text-3xl font-extrabold leading-tight tracking-normal text-black sm:text-3xl md:text-4xl lg:text-6xl dark:text-white'>
+					<h1 className='font-doto text-balance text-3xl font-extrabold leading-tight tracking-normal sm:text-3xl md:text-4xl lg:text-6xl'>
 						<span className='text-primary1'>Retro </span>
 						Pixel Perfection
 					</h1>
@@ -68,35 +66,28 @@ export const Home: React.FC = () => {
 				</div>
 			</div>
 
-			<ul className='grid grid-cols-1 gap-4 border-x border-dashed border-zinc-300 p-8 sm:grid-cols-2 lg:grid-cols-4 dark:border-zinc-700'>
+			<ul className='grid grid-cols-1 gap-4 border-x border-dashed border-zinc-300 p-8 text-black sm:grid-cols-2 lg:grid-cols-4 dark:border-zinc-700 dark:text-white'>
 				<li>
-					<h3 className='block text-base font-semibold text-black dark:text-white'>
-						Lightwight
-					</h3>
+					<h3 className='block text-base font-semibold'>Lightwight</h3>
 					<p className='text-pretty text-sm text-zinc-500 dark:text-zinc-400'>
 						Icons are lightwight, optimized scalable vector graphics (SVG).
 					</p>
 				</li>
 				<li>
-					<h3 className='block text-base font-semibold text-black dark:text-white'>
-						Customizable
-					</h3>
+					<SettingsIcon className='h-16 w-16' radius={1} />
+					<h3 className='block text-base font-semibold'>Customizable</h3>
 					<p className='text-pretty text-sm text-zinc-500 dark:text-zinc-400'>
 						Customize the color, size, stroke width, and more.
 					</p>
 				</li>
 				<li>
-					<h3 className='block text-base font-semibold text-black dark:text-white'>
-						Packages support
-					</h3>
+					<h3 className='block text-base font-semibold'>Packages support</h3>
 					<p className='text-pretty text-sm text-zinc-500 dark:text-zinc-400'>
 						Raster is available as a package for major package managers.
 					</p>
 				</li>
 				<li>
-					<h3 className='block text-base font-semibold text-black dark:text-white'>
-						Clean & consistent
-					</h3>
+					<h3 className='block text-base font-semibold'>Clean & consistent</h3>
 					<p className='text-pretty text-sm text-zinc-500 dark:text-zinc-400'>
 						Designed with a strict set of design rules for consistency in style and
 						readability.
@@ -128,7 +119,7 @@ export const Home: React.FC = () => {
 				{/* controls */}
 				<div className='relative flex h-full flex-col justify-start gap-8 border-zinc-300 p-8 text-black lg:col-span-1 lg:border-r dark:border-zinc-700 dark:text-white'>
 					<div>
-						<h3 className='text-lg font-medium leading-tight text-black md:text-xl lg:text-2xl dark:text-white'>
+						<h3 className='text-lg font-medium leading-tight md:text-xl lg:text-2xl'>
 							Style as you please
 						</h3>
 						<p className='text-sm text-zinc-500 dark:text-zinc-400'>
