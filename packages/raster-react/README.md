@@ -26,3 +26,4 @@ export default App;
 | `color`       | _string_ | currentColor |
 | `strokeWidth` | _number_ | 2            |
 | `radius`      | _number_ | 1            |
+| `className`   | _string_ |              |

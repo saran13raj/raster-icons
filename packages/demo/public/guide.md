@@ -16,7 +16,7 @@ In addition to design considerations, code optimization is essential. Assets lik
 
 ## Official Packages
 
-Raster's official packages are designed for compatibility across various platforms, making it easier for users to integrate icons into their projects. The packages are available for React, with support for additional technologies coming soon. Raster - Retro pixel perfection icons with a charming aesthetic for your UI design needs, made with 16x16 precision templates.
+Raster's official packages are designed for compatibility across various platforms, making it easier for users to integrate icons into their projects. The packages are available for [React](https://www.npmjs.com/package/raster-react), with support for additional technologies coming soon. Raster - Retro pixel perfection icons with a charming aesthetic for your UI design needs, made with 16x16 precision templates.
 
 ---
 
@@ -68,3 +68,4 @@ export default App;
 | `color`       | _string_ | currentColor |
 | `strokeWidth` | _number_ | 2            |
 | `radius`      | _number_ | 1            |
+| `className`   | _string_ |              |
