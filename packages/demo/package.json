@@ -20,7 +20,7 @@
 		"SVG"
 	],
 	"author": "Saran Raj",
-	"amdName": "raster-react",
+	"amdName": "raster-icons",
 	"scripts": {
 		"dev": "vite",
 		"build": "tsc -b && vite build",
