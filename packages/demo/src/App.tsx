@@ -46,10 +46,7 @@ function App() {
 												<div className='text-sm'>{route.label}</div>
 											</Link>
 										))}
-										<a
-											href='https://github.com/saran13raj/raster-icons/issues'
-											target='_blank'
-										>
+										<a href='https://github.com/saran13raj/raster-icons' target='_blank'>
 											<GithubIcon className='h-7 w-7 text-black dark:text-white' />
 										</a>
 									</div>
