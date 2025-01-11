@@ -28,12 +28,12 @@ Raster's official packages are designed for compatibility across various platfor
 pnpm install raster-react
 ```
 
-```sh [yarn]
-yarn add raster-react
-```
-
 ```sh [npm]
 npm install raster-react
+```
+
+```sh [yarn]
+yarn add raster-react
 ```
 
 ```sh [bun]

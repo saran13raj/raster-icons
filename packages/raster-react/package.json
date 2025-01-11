@@ -1,7 +1,8 @@
 {
 	"name": "raster-react",
-	"version": "0.0.0",
+	"version": "0.0.2",
 	"type": "module",
+	"license": "ISC",
 	"main": "dist/index.js",
 	"module": "dist/index.esm.js",
 	"types": "dist/index.d.ts",

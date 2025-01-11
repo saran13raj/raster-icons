@@ -1,8 +1,26 @@
 {
 	"name": "demo",
 	"private": true,
-	"version": "0.0.0",
+	"version": "0.0.2",
 	"type": "module",
+	"license": "ISC",
+	"homepage": "https://raster.saran13raj.com",
+	"bugs": "https://github.com/saran13raj/raster-icons/issues",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/saran13raj/raster-icons.git",
+		"directory": "packages/raster-react"
+	},
+	"keywords": [
+		"Pixel",
+		"React",
+		"Retro",
+		"Icons",
+		"Icon",
+		"SVG"
+	],
+	"author": "Saran Raj",
+	"amdName": "raster-react",
 	"scripts": {
 		"dev": "vite",
 		"build": "tsc -b && vite build",

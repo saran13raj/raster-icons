@@ -9,6 +9,7 @@ import {
 import { Button } from '../../shared/ui/button';
 import InfiniteScrollGrid from '../../shared/ui/infinite-scroll-grid';
 import { ControlRangeItem } from '../../widgets/controls-sidebar';
+import packageJson from '../../../package.json';
 
 export const Home: React.FC = () => {
 	const [strokeWidth, setStrokeWidth] = React.useState(0.25);
@@ -46,8 +47,11 @@ export const Home: React.FC = () => {
 			<div className='flex flex-col border border-dashed border-zinc-300 p-8 text-black lg:flex-row dark:border-zinc-700 dark:text-white'>
 				<div className='flex flex-col gap-2'>
 					<div className='mb-1 flex w-fit items-center gap-2 rounded-sm bg-zinc-700/60 px-2 py-[0.5px]'>
-						<p className='text-sm font-medium' data-text='version-0.0.1'>
-							v0.0.1
+						<p
+							className='text-sm font-medium'
+							data-text={`version-${packageJson.version}`}
+						>
+							v{packageJson.version}
 						</p>
 					</div>
 					<h1 className='font-doto text-balance text-3xl font-extrabold leading-tight tracking-normal sm:text-3xl md:text-4xl lg:text-6xl'>
