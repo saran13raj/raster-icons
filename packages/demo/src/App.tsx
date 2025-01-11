@@ -21,12 +21,20 @@ function App() {
 										<RasterLogo customClass='h-[4rem] w-[4rem]' />
 										<div className=''>Raster</div>
 									</Link>
-									<Link
-										className='w-fit items-center text-center font-semibold text-black lg:text-base dark:text-white'
-										to='/icons'
-									>
-										<div className='text-sm'>Icons</div>
-									</Link>
+									<div className='flex gap-6'>
+										<Link
+											className='w-fit items-center text-center font-semibold text-black lg:text-base dark:text-white'
+											to='/icons'
+										>
+											<div className='text-sm'>Icons</div>
+										</Link>
+										<Link
+											className='w-fit items-center text-center font-semibold text-black lg:text-base dark:text-white'
+											to='/guide'
+										>
+											<div className='text-sm'>Guide</div>
+										</Link>
+									</div>
 								</div>
 								<Routes location={location}>
 									<Route path='/' element={<Home />} />

@@ -1,5 +1,10 @@
 import React from 'react';
-import { SettingsIcon } from 'raster-react';
+import {
+	BlocksIcon,
+	BoxIcon,
+	SettingsIcon,
+	SpaceInvadersIcon
+} from 'raster-react';
 
 import { Button } from '../../shared/ui/button';
 import InfiniteScrollGrid from '../../shared/ui/infinite-scroll-grid';
@@ -55,31 +60,33 @@ export const Home: React.FC = () => {
 				</div>
 			</div>
 
-			<ul className='grid grid-cols-1 gap-4 border-x border-dashed border-zinc-300 p-8 text-black sm:grid-cols-2 lg:grid-cols-4 dark:border-zinc-700 dark:text-white'>
+			<ul className='grid grid-cols-1 gap-6 border-x border-dashed border-zinc-300 p-8 text-black sm:grid-cols-2 md:gap-4 lg:grid-cols-4 dark:border-zinc-700 dark:text-white'>
 				<li>
-					<h3 className='block text-base font-semibold'>Lightwight</h3>
+					<SpaceInvadersIcon className='text-primary1 h-16 w-16' radius={2} />
+					<h3 className='block text-base font-semibold'>Pixelated Past</h3>
 					<p className='text-pretty text-sm text-zinc-500 dark:text-zinc-400'>
-						Icons are lightwight, optimized scalable vector graphics (SVG).
+						Experience the glow of classic pixel art in modern style.
 					</p>
 				</li>
 				<li>
-					<SettingsIcon className='h-16 w-16' radius={1} />
+					<BlocksIcon className='text-primary1 h-16 w-16' radius={2} />
+					<h3 className='block text-base font-semibold'>Lightweight</h3>
+					<p className='text-pretty text-sm text-zinc-500 dark:text-zinc-400'>
+						Icons are lightwight and optimized scalable vector graphics (SVG).
+					</p>
+				</li>
+				<li>
+					<SettingsIcon className='text-primary1 h-16 w-16' radius={2} />
 					<h3 className='block text-base font-semibold'>Customizable</h3>
 					<p className='text-pretty text-sm text-zinc-500 dark:text-zinc-400'>
 						Customize the color, size, stroke width, and more.
 					</p>
 				</li>
 				<li>
+					<BoxIcon className='text-primary1 h-16 w-16' radius={2} />
 					<h3 className='block text-base font-semibold'>Packages support</h3>
 					<p className='text-pretty text-sm text-zinc-500 dark:text-zinc-400'>
-						Raster is available as a package for major package managers.
-					</p>
-				</li>
-				<li>
-					<h3 className='block text-base font-semibold'>Clean & consistent</h3>
-					<p className='text-pretty text-sm text-zinc-500 dark:text-zinc-400'>
-						Designed with a strict set of design rules for consistency in style and
-						readability.
+						Raster is accessible as a package for major package managers.
 					</p>
 				</li>
 			</ul>
@@ -109,10 +116,10 @@ export const Home: React.FC = () => {
 				<div className='relative flex h-full flex-col justify-start gap-8 border-zinc-300 p-8 text-black lg:col-span-1 lg:border-r dark:border-zinc-700 dark:text-white'>
 					<div>
 						<h3 className='text-lg font-medium leading-tight md:text-xl lg:text-2xl'>
-							Style as you please
+							Extensively Customizable
 						</h3>
 						<p className='text-sm text-zinc-500 dark:text-zinc-400'>
-							Raster has a lot of customization options to match the icons with your
+							Raster offers numerous customization options to align the icons with your
 							UI.
 						</p>
 					</div>

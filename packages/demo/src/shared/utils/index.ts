@@ -9,6 +9,31 @@ export function cn(...inputs: ClassValue[]) {
 	return twMerge(clsx(inputs));
 }
 
+export const transformToNameToKebabCase = (str: string) => {
+	// Step 1: Remove "Icon"
+	let modifiedStr = str.replace(/Icon$/, '');
+
+	// Step 2: Add a hyphen before each capital letter (except the first one)
+	modifiedStr = modifiedStr.replace(/([A-Z])/g, '-$1');
+
+	// Step 3: Remove leading hyphen if it exists
+	if (modifiedStr.startsWith('-')) {
+		modifiedStr = modifiedStr.slice(1);
+	}
+
+	// Step 4: Convert to lowercase
+	return modifiedStr.toLowerCase();
+};
+
+export const transformToPascalCase = (str: string) => {
+	return (
+		str
+			.split('-')
+			.map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+			.join('') + 'Icon'
+	);
+};
+
 const typedRasterIcons = RasterIcons as unknown as RasterIconsType;
 
 export const getExportedIcons = (): ParsedIcon[] => {
@@ -16,7 +41,7 @@ export const getExportedIcons = (): ParsedIcon[] => {
 	const iconList: ParsedIcon[] = Object.keys(RasterIcons)
 		.filter((iconName) => typeof typedRasterIcons[iconName] === 'function') // Ensure it's a function (component)
 		.map((iconName) => ({
-			name: iconName,
+			name: transformToNameToKebabCase(iconName),
 			Icon: typedRasterIcons[iconName] as React.FC<IconProps> // Cast to React functional component
 		}));
 	return iconList;

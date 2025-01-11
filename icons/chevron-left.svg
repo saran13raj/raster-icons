@@ -2,18 +2,14 @@
 	width="256"
 	height="256"
 	viewBox="0 0 256 256"
-	fill="currentColor"
-	stroke="currentColor"
-	stroke-width="0"
-	stroke-linecap="round"
-	stroke-linejoin="round"
+	fill="none"
 	xmlns="http://www.w3.org/2000/svg"
 >
-	<rect width="14" height="14" transform="matrix(-1 0 0 1 128 128)" />
-	<rect width="14" height="14" transform="matrix(-1 0 0 1 144 144)" />
-	<rect width="14" height="14" transform="matrix(-1 0 0 1 160 64)" />
-	<rect width="14" height="14" transform="matrix(-1 0 0 1 160 160)" />
-	<rect width="14" height="14" transform="matrix(-1 0 0 1 112 112)" />
-	<rect width="14" height="14" transform="matrix(-1 0 0 1 128 96)" />
-	<rect width="14" height="14" transform="matrix(-1 0 0 1 144 80)" />
+	<rect width="14" height="14" rx="rx" transform="matrix(-1 0 0 1 128 136)" />
+	<rect width="14" height="14" rx="rx" transform="matrix(-1 0 0 1 144 152)" />
+	<rect width="14" height="14" rx="rx" transform="matrix(-1 0 0 1 160 72)" />
+	<rect width="14" height="14" rx="rx" transform="matrix(-1 0 0 1 160 168)" />
+	<rect width="14" height="14" rx="rx" transform="matrix(-1 0 0 1 112 120)" />
+	<rect width="14" height="14" rx="rx" transform="matrix(-1 0 0 1 128 104)" />
+	<rect width="14" height="14" rx="rx" transform="matrix(-1 0 0 1 144 88)" />
 </svg>

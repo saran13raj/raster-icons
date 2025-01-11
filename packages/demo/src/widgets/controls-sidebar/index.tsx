@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Button } from '../../shared/ui/button';
+import { MenuIcon, XIcon } from 'raster-react';
 
 export const ControlsSidebar: React.FC<{
 	color: string;
@@ -26,10 +27,10 @@ export const ControlsSidebar: React.FC<{
 		<div className='border-zinc-300 lg:w-1/4 lg:border lg:border-b-0 lg:border-dashed dark:border-zinc-700'>
 			{/* Hamburger Menu Icon */}
 			<button
-				className='p-2 text-black lg:hidden dark:text-white'
+				className='-mt-8 mb-4 p-2 text-black lg:hidden dark:text-white'
 				onClick={() => setIsOpen(!isOpen)}
 			>
-				☰
+				<MenuIcon size={36} />
 			</button>
 
 			{/* Sidebar for large screens */}
@@ -86,10 +87,10 @@ export const ControlsSidebar: React.FC<{
 				<div className='fixed inset-0 z-10 bg-black bg-opacity-50 lg:hidden'>
 					<div className='absolute left-0 top-0 h-full w-64 bg-zinc-900 p-4 text-black dark:text-white'>
 						<div className='flex flex-col gap-4'>
-							<p className='flex justify-between text-base leading-tight md:text-lg lg:text-xl'>
+							<p className='flex items-center justify-between text-base leading-tight md:text-lg lg:text-xl'>
 								Controls
 								<button className='' onClick={() => setIsOpen(false)}>
-									X
+									<XIcon size={30} />
 								</button>
 							</p>
 							{/* <ControlItem label='Color' value={color}>

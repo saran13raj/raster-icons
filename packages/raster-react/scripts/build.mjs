@@ -14,14 +14,14 @@ async function buildIcons() {
 		}
 
 		const svgFiles = await glob(path.resolve(__dirname, '../../../icons/*.svg'));
-		console.log(`>>> raster-react: found ${svgFiles.length} SVG files to build`);
+		console.info(`>>> raster-react: found ${svgFiles.length} SVG files to build`);
 
 		let rasterReactContent = `import React from 'react';
 import { IconProps } from './types';
 
 `;
 
-		console.log(`>>> raster-react: Starting build`);
+		console.info(`>>> raster-react: Starting build`);
 		for (const svgFile of svgFiles) {
 			const basename = path.basename(svgFile, '.svg');
 			const componentName =
@@ -38,12 +38,21 @@ import { IconProps } from './types';
 						icon: 24,
 						plugins: ['@svgr/plugin-jsx'],
 						typescript: true,
-						replaceAttrValues: { rx: '{radius}' },
+						svgProps: {
+							fill: 'currentColor',
+							stroke: 'currentColor',
+							strokeWidth: '0',
+							height: '{size}',
+							width: '{size}'
+						},
+						replaceAttrValues: {
+							rx: '{radius}'
+						},
 						template: (variables, { tpl }) => {
 							return tpl`
 									export const ${variables.componentName}: React.FC<IconProps> = ({
-										size,
-									  	radius,
+										size = 24,
+									  	radius = 1,
 									  	...props
 									}) => {
 										return (
@@ -85,7 +94,7 @@ export interface IconProps extends Omit<SVGProps<SVGSVGElement>, 'color' | 'stro
 }
 `;
 		fs.writeFileSync('src/types.ts', typesContent);
-		console.log(`>>> raster-react: Build ended`);
+		console.info(`>>> raster-react: Build ended`);
 	} catch (error) {
 		console.error('raster-react build error:', error);
 		process.exit(1);
