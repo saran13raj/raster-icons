@@ -1,7 +1,7 @@
 {
 	"name": "demo",
 	"private": true,
-	"version": "0.0.3",
+	"version": "0.0.4",
 	"type": "module",
 	"license": "ISC",
 	"homepage": "https://raster.saran13raj.com",
