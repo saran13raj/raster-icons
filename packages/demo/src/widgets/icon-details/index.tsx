@@ -31,7 +31,7 @@ const IconDetails: React.FC<{
 									onClick={() => setShowDrawer(false)}
 									label=''
 									className=''
-									icon={<XIcon className='h-6 w-6' />}
+									icon={<XIcon className='h-6 w-6' radius={2} />}
 									ariaLabel='close'
 								/>
 							</p>

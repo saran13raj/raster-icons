@@ -40,7 +40,7 @@ const ControlsSidebar: React.FC = React.memo(() => {
 				className='-mt-6 mb-4 flex items-center p-2 text-black lg:hidden dark:text-white'
 				onClick={() => setIsOpen(!isOpen)}
 			>
-				<MenuIcon size={36} />
+				<MenuIcon size={36} radius={2} />
 				Menu
 			</button>
 
@@ -50,7 +50,7 @@ const ControlsSidebar: React.FC = React.memo(() => {
 					<p className='text-base leading-tight text-black md:text-lg lg:text-xl dark:text-white'>
 						Controls
 					</p>
-					<div className='flex items-center justify-between'>
+					<div className='flex items-center justify-between gap-2'>
 						<label className='flex justify-between text-xs font-medium'>Color</label>
 						<Button
 							onClick={() => {}}
@@ -115,7 +115,7 @@ const ControlsSidebar: React.FC = React.memo(() => {
 								<Button
 									onClick={() => setIsOpen(false)}
 									ariaLabel='close'
-									icon={<XIcon size={30} />}
+									icon={<XIcon size={30} radius={2} />}
 								/>
 							</p>
 							{/* <ControlItem label='Color' value={color}>

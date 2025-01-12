@@ -1,6 +1,6 @@
 import { Toaster } from 'sonner';
 import { Link, Route, Routes, useLocation } from 'react-router-dom';
-import { ArrowUpRightIcon, GithubIcon } from 'raster-react';
+import { ArrowUpRightIcon, GithubIcon, NpmIcon } from 'raster-react';
 
 import { Home } from './pages/home';
 import Icons from './pages/icons';
@@ -47,7 +47,16 @@ function App() {
 											</Link>
 										))}
 										<a href='https://github.com/saran13raj/raster-icons' target='_blank'>
-											<GithubIcon className='h-7 w-7 text-black dark:text-white' />
+											<GithubIcon
+												className='h-7 w-7 text-black dark:text-white'
+												radius={2}
+											/>
+										</a>
+										<a href='https://www.npmjs.com/package/raster-react' target='_blank'>
+											<NpmIcon
+												className='text-primary1 -ml-3 -mr-3 h-10 w-10'
+												radius={2}
+											/>
 										</a>
 									</div>
 								</div>

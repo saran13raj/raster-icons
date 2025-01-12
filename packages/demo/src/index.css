@@ -39,12 +39,12 @@ input[type='color']::-moz-color-swatch {
 .raster-icon-custom {
 	will-change: width, height, stroke-width, stroke;
 	color: var(--customize-color, #fefefe);
-	stroke-width: var(--customize-strokeWidth, 2);
+	stroke-width: var(--customize-strokeWidth, 0.25);
 }
 
 .raster-icon > *,
 .raster-icon-custom > * {
-	rx: var(--customize-cornerRadius, 2);
+	rx: var(--customize-cornerRadius, 1);
 }
 
 .guide-container {

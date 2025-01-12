@@ -30,7 +30,7 @@ export const Home: React.FC = () => {
 							v{packageJson.version}
 						</p>
 					</div>
-					<h1 className='font-doto text-balance text-3xl font-extrabold leading-tight tracking-normal sm:text-3xl md:text-4xl lg:text-6xl'>
+					<h1 className='font-doto text-balance text-4xl font-extrabold leading-tight tracking-normal sm:text-4xl md:text-5xl lg:text-6xl'>
 						<span className='text-primary1'>Retro </span>
 						Pixel Perfection
 					</h1>
