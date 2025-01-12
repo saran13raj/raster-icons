@@ -3,7 +3,7 @@ import { Link, Route, Routes, useLocation } from 'react-router-dom';
 import { ArrowUpRightIcon, GithubIcon } from 'raster-react';
 
 import { Home } from './pages/home';
-import { Icons } from './pages/icons';
+import Icons from './pages/icons';
 import { RasterLogo } from './shared/ui/raster-logo';
 import { Guide } from './pages/guide';
 import { cn } from './shared/utils';
@@ -101,7 +101,7 @@ function App() {
 			</div>
 			<Toaster
 				toastOptions={{
-					className: 'border bg-zinc-950 border-zinc-800 text-white'
+					className: 'border bg-zinc-900 border-zinc-800 text-white'
 				}}
 			/>
 		</>

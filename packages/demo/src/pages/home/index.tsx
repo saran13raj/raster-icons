@@ -10,38 +10,14 @@ import { Button } from '../../shared/ui/button';
 import InfiniteScrollGrid from '../../shared/ui/infinite-scroll-grid';
 import { ControlRangeItem } from '../../widgets/controls-sidebar';
 import packageJson from '../../../package.json';
+import {
+	updateColorCSSVar,
+	updateCornerRadiusCSSVar,
+	updateSizeCSSVar,
+	updateStrokeWidthCSSVar
+} from '../../shared/utils';
 
 export const Home: React.FC = () => {
-	const [strokeWidth, setStrokeWidth] = React.useState(0.25);
-	const [cornerRadius, setCornerRadius] = React.useState(1);
-	const [size, setSize] = React.useState(80);
-	const [color, setColor] = React.useState('#FEFEFE');
-
-	React.useEffect(() => {
-		document.documentElement.style.setProperty('--customize-color', color);
-	}, [color]);
-
-	React.useEffect(() => {
-		document.documentElement.style.setProperty(
-			'--customize-strokeWidth',
-			strokeWidth.toString()
-		);
-	}, [strokeWidth]);
-
-	React.useEffect(() => {
-		document.documentElement.style.setProperty(
-			'--customize-size',
-			size.toString()
-		);
-	}, [size]);
-
-	React.useEffect(() => {
-		document.documentElement.style.setProperty(
-			'--customize-cornerRadius',
-			cornerRadius.toString()
-		);
-	}, [cornerRadius]);
-
 	return (
 		<>
 			<div className='flex flex-col border border-dashed border-zinc-300 p-8 text-black lg:flex-row dark:border-zinc-700 dark:text-white'>
@@ -116,59 +92,10 @@ export const Home: React.FC = () => {
 					<div className='absolute h-[1px] w-full bg-zinc-300 dark:bg-zinc-300'></div>
 					<div className='absolute h-full w-[1px] bg-zinc-300 dark:bg-zinc-300'></div>
 				</div>
-				{/* controls */}
-				<div className='relative flex h-full flex-col justify-start gap-8 border-zinc-300 p-8 text-black lg:col-span-1 lg:border-r dark:border-zinc-700 dark:text-white'>
-					<div>
-						<h3 className='text-lg font-medium leading-tight md:text-xl lg:text-2xl'>
-							Extensively Customizable
-						</h3>
-						<p className='text-sm text-zinc-500 dark:text-zinc-400'>
-							Raster offers numerous customization options to align the icons with your
-							UI.
-						</p>
-					</div>
 
-					<div className='flex items-center justify-between'>
-						<label className='flex justify-between text-xs font-medium'>Color</label>
-						<Button
-							onClick={() => {}}
-							label={color}
-							className='w-[9rem] cursor-default justify-between text-xs'
-						>
-							<input
-								type='color'
-								value={color}
-								onChange={(e) => setColor(e.target.value)}
-								className='flex h-6 w-6 cursor-pointer rounded-full'
-								style={{ backgroundColor: color }}
-							/>
-						</Button>
-					</div>
-					<ControlRangeItem
-						label='Corner radius'
-						value={cornerRadius}
-						min={0}
-						max={7}
-						step={1}
-						onChange={(value) => setCornerRadius(value)}
-					/>
-					<ControlRangeItem
-						label='Stroke width'
-						value={strokeWidth}
-						min={0}
-						max={5}
-						step={0.25}
-						onChange={(value) => setStrokeWidth(value)}
-					/>
-					<ControlRangeItem
-						label='Size'
-						value={size}
-						min={16}
-						max={120}
-						step={1}
-						onChange={(value) => setSize(value)}
-					/>
-				</div>
+				{/* controls */}
+				<HomeControlsSidebar />
+
 				{/* preview */}
 				<div className='relative flex h-full flex-col justify-between overflow-hidden bg-white/30 p-6 lg:col-span-2 dark:bg-zinc-800/40'>
 					<InfiniteScrollGrid />
@@ -177,3 +104,94 @@ export const Home: React.FC = () => {
 		</>
 	);
 };
+
+const HomeControlsSidebar: React.FC = React.memo(() => {
+	const [strokeWidth, setStrokeWidth] = React.useState(0.25);
+	const [cornerRadius, setCornerRadius] = React.useState(1);
+	const [size, setSize] = React.useState(80);
+	const [color, setColor] = React.useState('#FEFEFE');
+
+	React.useEffect(() => {
+		const colorVariable =
+			document.documentElement.style.getPropertyValue('--customize-color');
+		const strokeWidthVariable = document.documentElement.style.getPropertyValue(
+			'--customize-strokeWidth'
+		);
+		const radiusVariable = document.documentElement.style.getPropertyValue(
+			'--customize-cornerRadius'
+		);
+
+		setColor(colorVariable ? colorVariable : '#FEFEFE');
+		setStrokeWidth(strokeWidthVariable ? parseFloat(strokeWidthVariable) : 0.25);
+		setCornerRadius(radiusVariable ? parseFloat(radiusVariable) : 1);
+
+		updateSizeCSSVar(80);
+	}, []);
+
+	return (
+		<div className='relative flex h-full flex-col justify-start gap-8 border-zinc-300 p-8 text-black lg:col-span-1 lg:border-r dark:border-zinc-700 dark:text-white'>
+			<div>
+				<h3 className='text-lg font-medium leading-tight md:text-xl lg:text-2xl'>
+					Extensively Customizable
+				</h3>
+				<p className='text-sm text-zinc-500 dark:text-zinc-400'>
+					Raster offers numerous customization options to align the icons with your
+					UI.
+				</p>
+			</div>
+
+			<div className='flex items-center justify-between'>
+				<label className='flex justify-between text-xs font-medium'>Color</label>
+				<Button
+					onClick={() => {}}
+					label={color}
+					className='w-[9rem] cursor-default justify-between text-xs'
+				>
+					<input
+						type='color'
+						value={color}
+						onChange={(e) => {
+							updateColorCSSVar(e.target.value);
+							setColor(e.target.value);
+						}}
+						className='flex h-6 w-6 cursor-pointer rounded-full'
+						style={{ backgroundColor: color }}
+					/>
+				</Button>
+			</div>
+			<ControlRangeItem
+				label='Corner radius'
+				value={cornerRadius}
+				min={0}
+				max={7}
+				step={1}
+				onChange={(value) => {
+					updateCornerRadiusCSSVar(value);
+					setCornerRadius(value);
+				}}
+			/>
+			<ControlRangeItem
+				label='Stroke width'
+				value={strokeWidth}
+				min={0}
+				max={5}
+				step={0.25}
+				onChange={(value) => {
+					updateStrokeWidthCSSVar(value);
+					setStrokeWidth(value);
+				}}
+			/>
+			<ControlRangeItem
+				label='Size'
+				value={size}
+				min={16}
+				max={80}
+				step={1}
+				onChange={(value) => {
+					updateSizeCSSVar(value);
+					setSize(value);
+				}}
+			/>
+		</div>
+	);
+});

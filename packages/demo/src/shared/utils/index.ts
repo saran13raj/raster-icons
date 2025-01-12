@@ -46,3 +46,28 @@ export const getExportedIcons = (): ParsedIcon[] => {
 		}));
 	return iconList;
 };
+
+export const updateColorCSSVar = (colorVal: string) => {
+	document.documentElement.style.setProperty('--customize-color', colorVal);
+};
+
+export const updateSizeCSSVar = (sizeVal: number) => {
+	document.documentElement.style.setProperty(
+		'--customize-size',
+		sizeVal.toString()
+	);
+};
+
+export const updateStrokeWidthCSSVar = (strokeWidthVal: number) => {
+	document.documentElement.style.setProperty(
+		'--customize-strokeWidth',
+		strokeWidthVal.toString()
+	);
+};
+
+export const updateCornerRadiusCSSVar = (cornerRadiusVal: number) => {
+	document.documentElement.style.setProperty(
+		'--customize-cornerRadius',
+		cornerRadiusVal.toString()
+	);
+};

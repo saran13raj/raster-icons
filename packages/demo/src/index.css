@@ -38,7 +38,7 @@ input[type='color']::-moz-color-swatch {
 .raster-icon,
 .raster-icon-custom {
 	will-change: width, height, stroke-width, stroke;
-	color: var(--customize-color, currentColor);
+	color: var(--customize-color, #fefefe);
 	stroke-width: var(--customize-strokeWidth, 2);
 }
 

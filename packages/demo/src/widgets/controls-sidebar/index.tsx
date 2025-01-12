@@ -1,27 +1,37 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Button } from '../../shared/ui/button';
 import { MenuIcon, XIcon } from 'raster-react';
 
-export const ControlsSidebar: React.FC<{
-	color: string;
-	setColor: (color: string) => void;
-	cornerRadius: number;
-	setCornerRadius: (radius: number) => void;
-	strokeWidth: number;
-	setStrokeWidth: (width: number) => void;
-	size: number;
-	setSize: (size: number) => void;
-}> = ({
-	color,
-	setColor,
-	cornerRadius,
-	setCornerRadius,
-	strokeWidth,
-	setStrokeWidth,
-	size,
-	setSize
-}) => {
-	const [isOpen, setIsOpen] = useState(false);
+import {
+	updateColorCSSVar,
+	updateCornerRadiusCSSVar,
+	updateSizeCSSVar,
+	updateStrokeWidthCSSVar
+} from '../../shared/utils';
+
+const ControlsSidebar: React.FC = React.memo(() => {
+	const [strokeWidth, setStrokeWidth] = React.useState(0.25);
+	const [cornerRadius, setCornerRadius] = React.useState(1);
+	const [size, setSize] = React.useState(50);
+	const [color, setColor] = React.useState('#FEFEFE');
+	const [isOpen, setIsOpen] = React.useState(false);
+
+	React.useEffect(() => {
+		const colorVariable =
+			document.documentElement.style.getPropertyValue('--customize-color');
+		const strokeWidthVariable = document.documentElement.style.getPropertyValue(
+			'--customize-strokeWidth'
+		);
+		const radiusVariable = document.documentElement.style.getPropertyValue(
+			'--customize-cornerRadius'
+		);
+
+		setColor(colorVariable ? colorVariable : '#FEFEFE');
+		setStrokeWidth(strokeWidthVariable ? parseFloat(strokeWidthVariable) : 0.25);
+		setCornerRadius(radiusVariable ? parseFloat(radiusVariable) : 1);
+
+		updateSizeCSSVar(50);
+	}, []);
 
 	return (
 		<div className='border-zinc-300 lg:w-1/4 lg:border lg:border-b-0 lg:border-dashed dark:border-zinc-700'>
@@ -50,7 +60,10 @@ export const ControlsSidebar: React.FC<{
 							<input
 								type='color'
 								value={color}
-								onChange={(e) => setColor(e.target.value)}
+								onChange={(e) => {
+									updateColorCSSVar(e.target.value);
+									setColor(e.target.value);
+								}}
 								className='flex h-6 w-6 cursor-pointer rounded-full'
 								style={{ backgroundColor: color }}
 							/>
@@ -62,7 +75,10 @@ export const ControlsSidebar: React.FC<{
 						min={0}
 						max={7}
 						step={1}
-						onChange={(value) => setCornerRadius(value)}
+						onChange={(value) => {
+							updateCornerRadiusCSSVar(value);
+							setCornerRadius(value);
+						}}
 					/>
 					<ControlRangeItem
 						label='Stroke width'
@@ -70,7 +86,10 @@ export const ControlsSidebar: React.FC<{
 						min={0}
 						max={5}
 						step={0.25}
-						onChange={(value) => setStrokeWidth(value)}
+						onChange={(value) => {
+							updateStrokeWidthCSSVar(value);
+							setStrokeWidth(value);
+						}}
 					/>
 					<ControlRangeItem
 						label='Size'
@@ -78,7 +97,10 @@ export const ControlsSidebar: React.FC<{
 						min={16}
 						max={50}
 						step={1}
-						onChange={(value) => setSize(value)}
+						onChange={(value) => {
+							updateSizeCSSVar(value);
+							setSize(value);
+						}}
 					/>
 				</div>
 			</div>
@@ -117,7 +139,10 @@ export const ControlsSidebar: React.FC<{
 									<input
 										type='color'
 										value={color}
-										onChange={(e) => setColor(e.target.value)}
+										onChange={(e) => {
+											updateColorCSSVar(e.target.value);
+											setColor(e.target.value);
+										}}
 										className='flex h-6 w-6 cursor-pointer rounded-full'
 										style={{ backgroundColor: color }}
 									/>
@@ -129,7 +154,10 @@ export const ControlsSidebar: React.FC<{
 								min={0}
 								max={7}
 								step={1}
-								onChange={(value) => setCornerRadius(value)}
+								onChange={(value) => {
+									updateCornerRadiusCSSVar(value);
+									setCornerRadius(value);
+								}}
 							/>
 							<ControlRangeItem
 								label='Stroke width'
@@ -137,7 +165,10 @@ export const ControlsSidebar: React.FC<{
 								min={0}
 								max={5}
 								step={0.25}
-								onChange={(value) => setStrokeWidth(value)}
+								onChange={(value) => {
+									updateStrokeWidthCSSVar(value);
+									setStrokeWidth(value);
+								}}
 							/>
 							<ControlRangeItem
 								label='Size'
@@ -145,7 +176,10 @@ export const ControlsSidebar: React.FC<{
 								min={16}
 								max={50}
 								step={1}
-								onChange={(value) => setSize(value)}
+								onChange={(value) => {
+									updateSizeCSSVar(value);
+									setSize(value);
+								}}
 							/>
 						</div>
 					</div>
@@ -153,7 +187,9 @@ export const ControlsSidebar: React.FC<{
 			)}
 		</div>
 	);
-};
+});
+
+export default ControlsSidebar;
 
 export const ControlItem: React.FC<{
 	label: string;
