@@ -36,10 +36,10 @@ const Icons: React.FC = React.memo(() => {
 			const svgElement = (
 				<RasterIcon
 					Icon={selectedIcon.Icon}
-					size={parseFloat(sizeVariable) ?? 24}
-					strokeWidth={parseFloat(strokeWidthVariable) ?? 1}
+					size={sizeVariable ? parseFloat(sizeVariable) : 24}
+					strokeWidth={strokeWidthVariable ? parseFloat(strokeWidthVariable) : 0.25}
 					color={colorVariable ?? '#fefefe'}
-					radius={parseFloat(radiusVariable) ?? 3}
+					radius={radiusVariable ? parseFloat(radiusVariable) : 1}
 				/>
 			);
 
@@ -69,7 +69,7 @@ const Icons: React.FC = React.memo(() => {
 				'--customize-cornerRadius'
 			);
 
-			const JSX = `<${transformToPascalCase(selectedIcon?.name)} size={${parseFloat(sizeVariable) ?? 24}} color="${colorVariable ?? '#fefefe'}" strokeWidth={${parseFloat(strokeWidthVariable) ?? 1}} radius={${parseFloat(radiusVariable) ?? 3}} />`;
+			const JSX = `<${transformToPascalCase(selectedIcon?.name)} size={${sizeVariable ? parseFloat(sizeVariable) : 24}} color="${colorVariable ?? '#fefefe'}" strokeWidth={${strokeWidthVariable ? parseFloat(strokeWidthVariable) : 0.25}} radius={${radiusVariable ? parseFloat(radiusVariable) : 1}} />`;
 			navigator.clipboard
 				.writeText(JSX)
 				.then(() => {
