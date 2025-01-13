@@ -22,7 +22,7 @@ function App() {
 				<main className='flex-grow'>
 					<section className='relative overflow-hidden'>
 						<div className='relative p-5 md:p-0 lg:px-16 xl:px-28'>
-							<div className='mt-4 flex flex-col'>
+							<div className='flex flex-col'>
 								<div className='mb-10 flex items-center justify-between'>
 									<Link
 										className='w-fit items-center text-center font-semibold text-black lg:text-base dark:text-white'
@@ -66,7 +66,7 @@ function App() {
 									<Route path='/guide' element={<Guide />} />
 								</Routes>
 							</div>
-							<footer className='mb-4 border border-dashed border-zinc-300 p-8 dark:border-zinc-700'>
+							<footer className='border border-dashed border-zinc-300 p-8 md:mb-4 dark:border-zinc-700'>
 								<div className='mb-2 flex gap-4'>
 									<a
 										href='https://github.com/saran13raj/raster-icons/issues'

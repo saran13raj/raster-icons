@@ -96,7 +96,7 @@ const Icons: React.FC = React.memo(() => {
 				<title>Icons</title>
 			</Helmet>
 			<ControlsSidebar />
-			<div className='flex flex-col gap-4 border-l border-r border-t border-dashed border-zinc-300 p-8 md:mb-0 md:border-l-0 lg:w-3/4 dark:border-zinc-700'>
+			<div className='flex flex-col gap-4 border-l border-r border-t border-dashed border-zinc-300 p-5 md:mb-0 md:border-l-0 md:p-8 lg:w-3/4 dark:border-zinc-700'>
 				<IconGallery
 					filteredIcons={filteredIcons}
 					setSelectedIcon={setSelectedIcon}
@@ -157,7 +157,7 @@ const IconGallery: React.FC<{
 						placeholder='Search icons ...'
 					/>
 				</div>
-				<div className='flex flex-wrap gap-4'>
+				<div className='flex flex-wrap gap-2 md:gap-4'>
 					{filteredIcons.map((icon, index) => (
 						<div
 							key={`${index}-${icon.name}`}
