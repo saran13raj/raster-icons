@@ -5,6 +5,7 @@ import {
 	SettingsIcon,
 	SpaceInvadersIcon
 } from 'raster-react';
+import { Helmet } from 'react-helmet';
 
 import { Button } from '../../shared/ui/button';
 import InfiniteScrollGrid from '../../shared/ui/infinite-scroll-grid';
@@ -20,6 +21,9 @@ import {
 export const Home: React.FC = () => {
 	return (
 		<>
+			<Helmet>
+				<title>Raster</title>
+			</Helmet>
 			<div className='flex flex-col border border-dashed border-zinc-300 p-8 text-black lg:flex-row dark:border-zinc-700 dark:text-white'>
 				<div className='flex flex-col gap-2'>
 					<div className='mb-1 flex w-fit items-center gap-2 rounded-sm bg-zinc-700/60 px-2 py-[0.5px]'>

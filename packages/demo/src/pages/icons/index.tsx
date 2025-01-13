@@ -2,6 +2,7 @@ import React from 'react';
 import { Tooltip as ReactTooltip } from 'react-tooltip';
 import ReactDOMServer from 'react-dom/server';
 import { toast } from 'sonner';
+import { Helmet } from 'react-helmet';
 
 import { getExportedIcons } from '../../shared/utils';
 import { ParsedIcon } from '../../shared/types';
@@ -91,6 +92,9 @@ const Icons: React.FC = React.memo(() => {
 
 	return (
 		<div className='flex h-full min-h-[40rem] flex-col md:flex-row'>
+			<Helmet>
+				<title>Icons</title>
+			</Helmet>
 			<ControlsSidebar />
 			<div className='flex flex-col gap-4 border-l border-r border-t border-dashed border-zinc-300 p-8 md:mb-0 md:border-l-0 lg:w-3/4 dark:border-zinc-700'>
 				<IconGallery

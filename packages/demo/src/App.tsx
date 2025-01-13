@@ -22,8 +22,8 @@ function App() {
 				<main className='flex-grow'>
 					<section className='relative overflow-hidden'>
 						<div className='relative p-5 md:p-0 lg:px-16 xl:px-28'>
-							<div className='flex flex-col'>
-								<div className='mb-10 mt-2 flex items-center justify-between'>
+							<div className='mt-4 flex flex-col'>
+								<div className='mb-10 flex items-center justify-between'>
 									<Link
 										className='w-fit items-center text-center font-semibold text-black lg:text-base dark:text-white'
 										to='/'
@@ -54,7 +54,7 @@ function App() {
 										</a>
 										<a href='https://www.npmjs.com/package/raster-react' target='_blank'>
 											<NpmIcon
-												className='text-primary1 -ml-3 -mr-3 h-10 w-10'
+												className='-ml-2 -mr-2 h-8 w-8 text-black dark:text-white'
 												radius={2}
 											/>
 										</a>
