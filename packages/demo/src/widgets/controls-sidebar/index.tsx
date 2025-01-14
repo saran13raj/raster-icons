@@ -55,7 +55,7 @@ const ControlsSidebar: React.FC = React.memo(() => {
 						<Button
 							onClick={() => {}}
 							label={color}
-							className='w-[9rem] cursor-default justify-between text-xs'
+							className='w-[9rem] cursor-default justify-between text-xs hover:bg-inherit'
 						>
 							<input
 								type='color'
@@ -134,7 +134,7 @@ const ControlsSidebar: React.FC = React.memo(() => {
 								<Button
 									onClick={() => {}}
 									label={color}
-									className='w-[9rem] cursor-default justify-between text-xs'
+									className='w-[9rem] cursor-default justify-between text-xs hover:bg-inherit'
 								>
 									<input
 										type='color'

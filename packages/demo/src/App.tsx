@@ -46,13 +46,21 @@ function App() {
 												<div className='text-sm'>{route.label}</div>
 											</Link>
 										))}
-										<a href='https://github.com/saran13raj/raster-icons' target='_blank'>
+										<a
+											href='https://github.com/saran13raj/raster-icons'
+											target='_blank'
+											aria-label='github'
+										>
 											<GithubIcon
 												className='h-7 w-7 text-black dark:text-white'
 												radius={2}
 											/>
 										</a>
-										<a href='https://www.npmjs.com/package/raster-react' target='_blank'>
+										<a
+											href='https://www.npmjs.com/package/raster-react'
+											target='_blank'
+											aria-label='npm'
+										>
 											<NpmIcon
 												className='-ml-2 -mr-2 h-8 w-8 text-black dark:text-white'
 												radius={2}
@@ -66,23 +74,30 @@ function App() {
 									<Route path='/guide' element={<Guide />} />
 								</Routes>
 							</div>
-							<footer className='border border-dashed border-zinc-300 p-8 md:mb-4 dark:border-zinc-700'>
-								<div className='mb-2 flex gap-4'>
+							<footer className='flex flex-col gap-5 border border-dashed border-zinc-300 p-8 md:mb-4 dark:border-zinc-700'>
+								<div className='flex gap-4'>
 									<a
 										href='https://github.com/saran13raj/raster-icons/issues'
 										target='_blank'
+										className='flex items-center'
+										aria-label='issues'
 									>
 										<Button
 											label='Issues'
-											className='gap-1 border-0 bg-transparent p-0 hover:bg-transparent'
+											className='h-fit gap-1 border-0 bg-transparent p-0 hover:bg-transparent'
 										>
 											<ArrowUpRightIcon className='h-5 w-5' />
 										</Button>
 									</a>
-									<a href='https://github.com/saran13raj/raster-icons' target='_blank'>
+									<a
+										href='https://github.com/saran13raj/raster-icons'
+										target='_blank'
+										className='flex items-center'
+									>
 										<Button
 											label='GitHub'
-											className='gap-1 border-0 bg-transparent p-0 hover:bg-transparent'
+											className='h-fit gap-1 border-0 bg-transparent p-0 hover:bg-transparent'
+											aria-label='github'
 										>
 											<ArrowUpRightIcon className='h-5 w-5' />
 										</Button>
@@ -91,7 +106,7 @@ function App() {
 								<p className='text-sm text-zinc-500 dark:text-zinc-400'>
 									Released under the ISC License
 								</p>
-								<p className='mt-6 text-sm text-zinc-500 lg:col-span-2 dark:text-zinc-400'>
+								<p className='text-sm text-zinc-500 lg:col-span-2 dark:text-zinc-400'>
 									Designed and built by
 									<a
 										className='undefined hover:text-accent-300 text-black dark:text-white'

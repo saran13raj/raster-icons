@@ -17,6 +17,7 @@ import {
 	updateSizeCSSVar,
 	updateStrokeWidthCSSVar
 } from '../../shared/utils';
+import { Link } from 'react-router-dom';
 
 export const Home: React.FC = () => {
 	return (
@@ -41,33 +42,47 @@ export const Home: React.FC = () => {
 					<p className='text-pretty text-xl font-medium text-zinc-500 dark:text-zinc-400'>
 						Icons with retro charm
 					</p>
+					<div className='mt-2 flex gap-4'>
+						<Link
+							to='/icons'
+							className='bg-primary1 hover:bg-primary1/70 inline-flex h-[40px] items-center justify-center gap-2 whitespace-nowrap rounded-md border border-zinc-800 px-3 py-2.5 text-sm font-medium text-white focus:outline-none'
+						>
+							View all icons
+						</Link>
+						<Link
+							to='/guide'
+							className='inline-flex h-[40px] items-center justify-center gap-2 whitespace-nowrap rounded-md border border-zinc-800 bg-zinc-900 px-3 py-2.5 text-sm font-medium text-white hover:bg-zinc-800 focus:outline-none'
+						>
+							Guide
+						</Link>
+					</div>
 				</div>
 			</div>
 
 			<ul className='grid grid-cols-1 gap-6 border-x border-dashed border-zinc-300 p-8 text-black sm:grid-cols-2 md:gap-4 lg:grid-cols-4 dark:border-zinc-700 dark:text-white'>
 				<li>
-					<SpaceInvadersIcon className='text-primary1 h-16 w-16' radius={2} />
+					<SpaceInvadersIcon className='text-primary1 -ml-2 h-16 w-16' radius={2} />
 					<h3 className='block text-base font-semibold'>Pixelated Past</h3>
 					<p className='text-pretty text-sm text-zinc-500 dark:text-zinc-400'>
 						Experience the glow of classic pixel art in modern style.
 					</p>
 				</li>
 				<li>
-					<BlocksIcon className='text-primary1 h-16 w-16' radius={2} />
+					<BlocksIcon className='text-primary1 -ml-3 h-16 w-16' radius={2} />
 					<h3 className='block text-base font-semibold'>Lightweight</h3>
 					<p className='text-pretty text-sm text-zinc-500 dark:text-zinc-400'>
 						Icons are lightwight and optimized scalable vector graphics (SVG).
 					</p>
 				</li>
 				<li>
-					<SettingsIcon className='text-primary1 h-16 w-16' radius={2} />
+					<SettingsIcon className='text-primary1 -ml-3 h-16 w-16' radius={2} />
 					<h3 className='block text-base font-semibold'>Customizable</h3>
 					<p className='text-pretty text-sm text-zinc-500 dark:text-zinc-400'>
 						Customize the color, size, stroke width, and more.
 					</p>
 				</li>
 				<li>
-					<BoxIcon className='text-primary1 h-16 w-16' radius={2} />
+					<BoxIcon className='text-primary1 -ml-3 h-16 w-16' radius={2} />
 					<h3 className='block text-base font-semibold'>Packages support</h3>
 					<p className='text-pretty text-sm text-zinc-500 dark:text-zinc-400'>
 						Raster is accessible as a package for major package managers.
@@ -149,7 +164,7 @@ const HomeControlsSidebar: React.FC = React.memo(() => {
 				<Button
 					onClick={() => {}}
 					label={color}
-					className='w-[9rem] cursor-default justify-between text-xs'
+					className='w-[9rem] cursor-default justify-between text-xs hover:bg-inherit'
 				>
 					<input
 						type='color'
