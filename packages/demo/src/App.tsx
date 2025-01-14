@@ -18,26 +18,24 @@ function App() {
 	const location = useLocation();
 	return (
 		<>
-			<div className='relative mx-auto flex min-h-screen flex-col border-dashed border-zinc-300 bg-[#f7f7f7] 2xl:max-w-7xl 2xl:border-x dark:border-zinc-700 dark:bg-[#1a1c1f]'>
+			<div className='relative mx-auto flex min-h-screen flex-col border-dashed border-zinc-700 bg-[#1a1c1f] 2xl:max-w-7xl 2xl:border-x'>
 				<main className='flex-grow'>
 					<section className='relative overflow-hidden'>
 						<div className='relative p-5 md:p-0 lg:px-16 xl:px-28'>
 							<div className='flex flex-col'>
 								<div className='mb-10 flex items-center justify-between'>
 									<Link
-										className='w-fit items-center text-center font-semibold text-black lg:text-base dark:text-white'
+										className='w-fit items-center text-center font-semibold text-white lg:text-base'
 										to='/'
 									>
-										<RasterLogo customClass='h-[4rem] w-[4rem]' />
+										<RasterLogo className='h-[4rem] w-[4rem]' />
 										<div className=''>Raster</div>
 									</Link>
 									<div className='flex items-center gap-6'>
 										{routes.map((route) => (
 											<Link
 												className={cn(
-													location.pathname === route.link
-														? 'text-primary1'
-														: 'text-black dark:text-white',
+													location.pathname === route.link ? 'text-primary1' : 'text-white',
 													'w-fit items-center text-center font-semibold lg:text-base'
 												)}
 												to={route.link}
@@ -51,20 +49,14 @@ function App() {
 											target='_blank'
 											aria-label='github'
 										>
-											<GithubIcon
-												className='h-7 w-7 text-black dark:text-white'
-												radius={2}
-											/>
+											<GithubIcon className='h-7 w-7 text-white' radius={2} />
 										</a>
 										<a
 											href='https://www.npmjs.com/package/raster-react'
 											target='_blank'
 											aria-label='npm'
 										>
-											<NpmIcon
-												className='-ml-2 -mr-2 h-8 w-8 text-black dark:text-white'
-												radius={2}
-											/>
+											<NpmIcon className='-ml-2 -mr-2 h-8 w-8 text-white' radius={2} />
 										</a>
 									</div>
 								</div>
@@ -74,7 +66,7 @@ function App() {
 									<Route path='/guide' element={<Guide />} />
 								</Routes>
 							</div>
-							<footer className='flex flex-col gap-5 border border-dashed border-zinc-300 p-8 md:mb-4 dark:border-zinc-700'>
+							<footer className='flex flex-col gap-5 border border-dashed border-zinc-700 p-8 md:mb-4'>
 								<div className='flex gap-4'>
 									<a
 										href='https://github.com/saran13raj/raster-icons/issues'
@@ -93,25 +85,24 @@ function App() {
 										href='https://github.com/saran13raj/raster-icons'
 										target='_blank'
 										className='flex items-center'
+										aria-label='github'
 									>
 										<Button
 											label='GitHub'
 											className='h-fit gap-1 border-0 bg-transparent p-0 hover:bg-transparent'
-											aria-label='github'
 										>
 											<ArrowUpRightIcon className='h-5 w-5' />
 										</Button>
 									</a>
 								</div>
-								<p className='text-sm text-zinc-500 dark:text-zinc-400'>
-									Released under the ISC License
-								</p>
-								<p className='text-sm text-zinc-500 lg:col-span-2 dark:text-zinc-400'>
+								<p className='text-sm text-zinc-400'>Released under the ISC License</p>
+								<p className='text-sm text-zinc-400 lg:col-span-2'>
 									Designed and built by
 									<a
-										className='undefined hover:text-accent-300 text-black dark:text-white'
+										className='undefined hover:text-accent-300 text-white'
 										href='https://saran13raj.com/'
 										target='_blank'
+										aria-label='saran13raj'
 									>
 										{' '}
 										Saran Raj
@@ -125,7 +116,8 @@ function App() {
 			</div>
 			<Toaster
 				toastOptions={{
-					className: 'border bg-zinc-900 border-zinc-800 text-white'
+					className:
+						'border bg-zinc-900 border-zinc-800 text-white text-xs md:text-sm'
 				}}
 			/>
 		</>

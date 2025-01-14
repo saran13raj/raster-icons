@@ -36,7 +36,7 @@ const InfiniteScrollGrid: React.FC = React.memo(() => {
 												className='flex aspect-square w-full items-center justify-center'
 												aria-label={icon.name}
 											>
-												<RasterIcon Icon={icon.Icon} />
+												<RasterIcon Icon={icon.Icon} name={icon.name} />
 											</div>
 										)
 									)}

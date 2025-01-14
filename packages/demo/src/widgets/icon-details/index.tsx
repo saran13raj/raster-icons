@@ -22,10 +22,11 @@ const IconDetails: React.FC<{
 							<RasterIcon
 								Icon={icon.Icon}
 								className='h-[8rem] w-[8rem] md:h-[15rem] md:w-[15rem]'
+								name={icon.name}
 							/>
 						</div>
 						<div className='ml-8 flex w-full flex-col gap-2'>
-							<p className='flex w-full items-center justify-between text-black md:text-lg lg:text-xl dark:text-white'>
+							<p className='flex w-full items-center justify-between text-white md:text-lg lg:text-xl'>
 								{icon.name}
 								<Button
 									onClick={() => setShowDrawer(false)}

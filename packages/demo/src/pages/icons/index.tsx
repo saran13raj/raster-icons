@@ -10,6 +10,11 @@ import IconDetails from '../../widgets/icon-details';
 import ControlsSidebar from '../../widgets/controls-sidebar';
 import RasterIcon from '../../shared/ui/raster-icon';
 import { transformToPascalCase } from '../../shared/utils';
+import { RasterLogo } from '../../shared/ui/raster-logo';
+
+const LazyIconGallery = React.lazy(() =>
+	Promise.resolve({ default: IconGallery })
+);
 
 const Icons: React.FC = React.memo(() => {
 	const [searchText, setSearchText] = React.useState('');
@@ -41,6 +46,7 @@ const Icons: React.FC = React.memo(() => {
 					strokeWidth={strokeWidthVariable ? parseFloat(strokeWidthVariable) : 0.25}
 					color={colorVariable ?? '#fefefe'}
 					radius={radiusVariable ? parseFloat(radiusVariable) : 1}
+					name={selectedIcon.name}
 				/>
 			);
 
@@ -96,14 +102,22 @@ const Icons: React.FC = React.memo(() => {
 				<title>Icons</title>
 			</Helmet>
 			<ControlsSidebar />
-			<div className='flex flex-col gap-4 border-l border-r border-t border-dashed border-zinc-300 p-5 md:mb-0 md:border-l-0 md:p-8 md:pb-36 lg:w-3/4 dark:border-zinc-700'>
-				<IconGallery
-					filteredIcons={filteredIcons}
-					setSelectedIcon={setSelectedIcon}
-					setShowIconDetails={setShowIconDetails}
-					searchText={searchText}
-					setSearchText={setSearchText}
-				/>
+			<div className='flex flex-col gap-4 border-l border-r border-t border-dashed border-zinc-700 p-5 md:mb-0 md:border-l-0 md:p-8 md:pb-36 lg:w-3/4'>
+				<React.Suspense
+					fallback={
+						<div className='flex h-full w-full items-center justify-center'>
+							<RasterLogo className='animate-spin-slow h-[6.5rem] w-[6.5rem]' />
+						</div>
+					}
+				>
+					<LazyIconGallery
+						filteredIcons={filteredIcons}
+						setSelectedIcon={setSelectedIcon}
+						setShowIconDetails={setShowIconDetails}
+						searchText={searchText}
+						setSearchText={setSearchText}
+					/>
+				</React.Suspense>
 
 				<IconDetails
 					showDrawer={showIconDetails}
@@ -155,6 +169,7 @@ const IconGallery: React.FC<{
 							'focus:border-primary1 hover:border-primary1 focus:ring-primary1 caret-primary1 w-full rounded-md border border-zinc-600 bg-zinc-800/40 px-2 py-2 text-sm/6 text-zinc-100 focus:outline-none'
 						}
 						placeholder='Search icons ...'
+						aria-label='search icons'
 					/>
 				</div>
 				<div className='flex flex-wrap gap-2 md:gap-4'>
@@ -162,7 +177,6 @@ const IconGallery: React.FC<{
 						<div
 							key={`${index}-${icon.name}`}
 							className='flex aspect-square h-[52px] w-[52px] items-center justify-center overflow-hidden rounded-sm bg-zinc-800/40 hover:cursor-pointer hover:bg-zinc-700/70'
-							aria-label={icon.name}
 							data-tooltip-id='raster-tooltip'
 							data-tooltip-content={icon.name}
 							data-tooltip-offset={-2}
@@ -171,7 +185,7 @@ const IconGallery: React.FC<{
 								setShowIconDetails(true);
 							}}
 						>
-							<RasterIcon Icon={icon.Icon} />
+							<RasterIcon Icon={icon.Icon} name={icon.name} />
 						</div>
 					))}
 				</div>

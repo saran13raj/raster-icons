@@ -1,0 +1,6 @@
+User-agent: *
+Disallow: /private/
+Disallow: /tmp/
+Allow: /
+
+Sitemap: https://raster.saran13raj.com/sitemap.xml

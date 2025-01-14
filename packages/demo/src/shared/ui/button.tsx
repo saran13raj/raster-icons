@@ -25,7 +25,7 @@ export const Button: React.FC<{
 			disabled={disabled}
 			className={cn(
 				rounded ? 'rounded-full' : 'rounded-md',
-				'hover:bg-primary1/90 group inline-flex h-[40px] items-center justify-center gap-2 whitespace-nowrap border border-zinc-800 bg-zinc-900 px-3 py-2.5 text-xs font-medium text-black focus:outline-none md:text-sm dark:text-white',
+				'hover:bg-primary1/90 group inline-flex h-[40px] items-center justify-center gap-2 whitespace-nowrap border border-zinc-800 bg-zinc-900 px-3 py-2.5 text-xs font-medium text-white focus:outline-none md:text-sm',
 				className
 			)}
 			onClick={(e) => onClick && onClick(e)}

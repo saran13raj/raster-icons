@@ -57,14 +57,33 @@
 		<meta name="article:publisher" content="https://twitter.com/saran13raj" />
 
 		<!-- fonts -->
-		<link
+		<!-- <link
 			href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Short+Stack&display=swap"
 			rel="stylesheet"
 		/>
 		<link
 			href="https://fonts.googleapis.com/css2?family=Doto:wght@100..900&display=swap"
 			rel="stylesheet"
-		/>
+		/> -->
+		<script>
+			// lazy load fonts
+			function loadFonts() {
+				const fontLinks = [
+					'https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Short+Stack&display=swap',
+					'https://fonts.googleapis.com/css2?family=Doto:wght@100..900&display=swap'
+				];
+
+				fontLinks.forEach((href) => {
+					const link = document.createElement('link');
+					link.href = href;
+					link.rel = 'stylesheet';
+					document.head.appendChild(link);
+				});
+			}
+
+			// load fonts after page has fully loaded
+			window.addEventListener('load', loadFonts);
+		</script>
 	</head>
 	<body>
 		<div id="root"></div>

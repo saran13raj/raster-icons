@@ -6,9 +6,9 @@ import {
 	SpaceInvadersIcon
 } from 'raster-react';
 import { Helmet } from 'react-helmet';
+import { Link } from 'react-router-dom';
 
 import { Button } from '../../shared/ui/button';
-import InfiniteScrollGrid from '../../shared/ui/infinite-scroll-grid';
 import { ControlRangeItem } from '../../widgets/controls-sidebar';
 import packageJson from '../../../package.json';
 import {
@@ -17,7 +17,11 @@ import {
 	updateSizeCSSVar,
 	updateStrokeWidthCSSVar
 } from '../../shared/utils';
-import { Link } from 'react-router-dom';
+import { RasterLogo } from '../../shared/ui/raster-logo';
+
+const InfiniteScrollGrid = React.lazy(
+	() => import('../../shared/ui/infinite-scroll-grid')
+);
 
 export const Home: React.FC = () => {
 	return (
@@ -25,7 +29,7 @@ export const Home: React.FC = () => {
 			<Helmet>
 				<title>Raster</title>
 			</Helmet>
-			<div className='flex flex-col border border-dashed border-zinc-300 p-5 text-black md:p-8 lg:flex-row dark:border-zinc-700 dark:text-white'>
+			<div className='flex flex-col border border-dashed border-zinc-700 p-5 text-white md:p-8 lg:flex-row'>
 				<div className='flex flex-col gap-2'>
 					<div className='mb-1 flex w-fit items-center gap-2 rounded-sm bg-zinc-700/60 px-2 py-[0.5px]'>
 						<p
@@ -39,7 +43,7 @@ export const Home: React.FC = () => {
 						<span className='text-primary1'>Retro </span>
 						Pixel Perfection
 					</h1>
-					<p className='text-pretty text-xl font-medium text-zinc-500 dark:text-zinc-400'>
+					<p className='text-pretty text-xl font-medium text-zinc-400'>
 						Icons with retro charm
 					</p>
 					<div className='mt-2 flex gap-4'>
@@ -59,65 +63,73 @@ export const Home: React.FC = () => {
 				</div>
 			</div>
 
-			<ul className='grid grid-cols-1 gap-6 border-x border-dashed border-zinc-300 p-8 text-black sm:grid-cols-2 md:gap-4 lg:grid-cols-4 dark:border-zinc-700 dark:text-white'>
+			<ul className='grid grid-cols-1 gap-6 border-x border-dashed border-zinc-700 p-8 text-white sm:grid-cols-2 md:gap-4 lg:grid-cols-4'>
 				<li>
 					<SpaceInvadersIcon className='text-primary1 -ml-2 h-16 w-16' radius={2} />
 					<h3 className='block text-base font-semibold'>Pixelated Past</h3>
-					<p className='text-pretty text-sm text-zinc-500 dark:text-zinc-400'>
+					<p className='text-pretty text-sm text-zinc-400'>
 						Experience the glow of classic pixel art in modern style.
 					</p>
 				</li>
 				<li>
 					<BlocksIcon className='text-primary1 -ml-3 h-16 w-16' radius={2} />
 					<h3 className='block text-base font-semibold'>Lightweight</h3>
-					<p className='text-pretty text-sm text-zinc-500 dark:text-zinc-400'>
+					<p className='text-pretty text-sm text-zinc-400'>
 						Icons are lightwight and optimized scalable vector graphics (SVG).
 					</p>
 				</li>
 				<li>
 					<SettingsIcon className='text-primary1 -ml-3 h-16 w-16' radius={2} />
 					<h3 className='block text-base font-semibold'>Customizable</h3>
-					<p className='text-pretty text-sm text-zinc-500 dark:text-zinc-400'>
+					<p className='text-pretty text-sm text-zinc-400'>
 						Customize the color, size, stroke width, and more.
 					</p>
 				</li>
 				<li>
 					<BoxIcon className='text-primary1 -ml-3 h-16 w-16' radius={2} />
 					<h3 className='block text-base font-semibold'>Packages support</h3>
-					<p className='text-pretty text-sm text-zinc-500 dark:text-zinc-400'>
+					<p className='text-pretty text-sm text-zinc-400'>
 						Raster is accessible as a package for major package managers.
 					</p>
 				</li>
 			</ul>
 
-			<div className='relative grid grid-cols-1 border border-dashed border-zinc-300 md:grid-cols-2 md:border-b-0 lg:grid-cols-3 dark:border-zinc-700'>
+			<div className='relative grid grid-cols-1 border border-dashed border-zinc-700 md:grid-cols-2 md:border-b-0 lg:grid-cols-3'>
 				{/* <!-- Top Left Plus --> */}
 				<div className='z-5 absolute -left-[0.65rem] -top-[0.65rem] flex size-5 items-center justify-center'>
-					<div className='absolute h-[1px] w-full bg-zinc-300 dark:bg-zinc-300'></div>
-					<div className='absolute h-full w-[1px] bg-zinc-300 dark:bg-zinc-300'></div>
+					<div className='absolute h-[1px] w-full bg-zinc-300'></div>
+					<div className='absolute h-full w-[1px] bg-zinc-300'></div>
 				</div>
 				{/* <!-- Top Right Plus --> */}
 				<div className='z-5 absolute -right-[0.67rem] -top-[0.65rem] flex size-5 items-center justify-center'>
-					<div className='absolute h-[1px] w-full bg-zinc-300 dark:bg-zinc-300'></div>
-					<div className='absolute h-full w-[1px] bg-zinc-300 dark:bg-zinc-300'></div>
+					<div className='absolute h-[1px] w-full bg-zinc-300'></div>
+					<div className='absolute h-full w-[1px] bg-zinc-300'></div>
 				</div>
 				{/* <!-- Bottom Left Plus --> */}
 				<div className='z-5 absolute -bottom-[0.65rem] -left-[0.65rem] flex size-5 items-center justify-center'>
-					<div className='absolute h-[1px] w-full bg-zinc-300 dark:bg-zinc-300'></div>
-					<div className='absolute h-full w-[1px] bg-zinc-300 dark:bg-zinc-300'></div>
+					<div className='absolute h-[1px] w-full bg-zinc-300'></div>
+					<div className='absolute h-full w-[1px] bg-zinc-300'></div>
 				</div>
 				{/* <!-- Bottom Right Plus --> */}
 				<div className='z-5 absolute -bottom-[0.65rem] -right-[0.67rem] flex size-5 items-center justify-center'>
-					<div className='absolute h-[1px] w-full bg-zinc-300 dark:bg-zinc-300'></div>
-					<div className='absolute h-full w-[1px] bg-zinc-300 dark:bg-zinc-300'></div>
+					<div className='absolute h-[1px] w-full bg-zinc-300'></div>
+					<div className='absolute h-full w-[1px] bg-zinc-300'></div>
 				</div>
 
 				{/* controls */}
 				<HomeControlsSidebar />
 
 				{/* preview */}
-				<div className='relative flex h-full flex-col justify-between overflow-hidden bg-white/30 p-6 lg:col-span-2 dark:bg-zinc-800/40'>
-					<InfiniteScrollGrid />
+				<div className='relative flex h-full flex-col justify-between overflow-hidden bg-zinc-800/40 p-6 lg:col-span-2'>
+					<React.Suspense
+						fallback={
+							<div className='flex h-full w-full items-center justify-center'>
+								<RasterLogo className='animate-spin-slow h-[6.5rem] w-[6.5rem]' />
+							</div>
+						}
+					>
+						<InfiniteScrollGrid />
+					</React.Suspense>
 				</div>
 			</div>
 		</>
@@ -148,12 +160,12 @@ const HomeControlsSidebar: React.FC = React.memo(() => {
 	}, []);
 
 	return (
-		<div className='relative flex h-full flex-col justify-start gap-8 border-zinc-300 p-8 text-black lg:col-span-1 lg:border-r dark:border-zinc-700 dark:text-white'>
+		<div className='relative flex h-full flex-col justify-start gap-8 border-zinc-700 p-8 text-white lg:col-span-1 lg:border-r'>
 			<div>
 				<h3 className='text-lg font-medium leading-tight md:text-xl lg:text-2xl'>
 					Extensively Customizable
 				</h3>
-				<p className='text-sm text-zinc-500 dark:text-zinc-400'>
+				<p className='text-sm text-zinc-400'>
 					Raster offers numerous customization options to align the icons with your
 					UI.
 				</p>
@@ -175,6 +187,7 @@ const HomeControlsSidebar: React.FC = React.memo(() => {
 						}}
 						className='flex h-6 w-6 cursor-pointer rounded-full'
 						style={{ backgroundColor: color }}
+						aria-label='color'
 					/>
 				</Button>
 			</div>
