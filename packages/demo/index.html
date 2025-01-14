@@ -30,7 +30,10 @@
 			property="og:description"
 			content="Explore our collection of retro pixel perfect icons that bring charm and character to your designs."
 		/>
-		<meta property="og:image" content="https://raster.saran13raj.com/image.png" />
+		<meta
+			property="og:image"
+			content="https://raster.saran13raj.com/raster.png"
+		/>
 		<!-- Replace with actual image path -->
 		<meta property="og:url" content="https://raster.saran13raj.com" />
 		<meta property="og:type" content="website" />
@@ -47,21 +50,40 @@
 		/>
 		<meta
 			name="twitter:image"
-			content="https://raster.saran13raj.com/image.png"
+			content="https://raster.saran13raj.com/raster.png"
 		/>
 		<!-- Replace with actual image path -->
 		<meta name="article:author" content="https://twitter.com/saran13raj" />
 		<meta name="article:publisher" content="https://twitter.com/saran13raj" />
 
 		<!-- fonts -->
-		<link
+		<!-- <link
 			href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Short+Stack&display=swap"
 			rel="stylesheet"
 		/>
 		<link
 			href="https://fonts.googleapis.com/css2?family=Doto:wght@100..900&display=swap"
 			rel="stylesheet"
-		/>
+		/> -->
+		<script>
+			// lazy load fonts
+			function loadFonts() {
+				const fontLinks = [
+					'https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Short+Stack&display=swap',
+					'https://fonts.googleapis.com/css2?family=Doto:wght@100..900&display=swap'
+				];
+
+				fontLinks.forEach((href) => {
+					const link = document.createElement('link');
+					link.href = href;
+					link.rel = 'stylesheet';
+					document.head.appendChild(link);
+				});
+			}
+
+			// load fonts after page has fully loaded
+			window.addEventListener('load', loadFonts);
+		</script>
 	</head>
 	<body>
 		<div id="root"></div>

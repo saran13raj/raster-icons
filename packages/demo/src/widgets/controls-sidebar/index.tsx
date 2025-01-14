@@ -34,10 +34,10 @@ const ControlsSidebar: React.FC = React.memo(() => {
 	}, []);
 
 	return (
-		<div className='border-zinc-300 lg:w-1/4 lg:border lg:border-b-0 lg:border-dashed dark:border-zinc-700'>
+		<div className='border-zinc-700 lg:w-1/4 lg:border lg:border-b-0 lg:border-dashed'>
 			{/* Hamburger Menu Icon */}
 			<button
-				className='-mt-6 mb-4 flex items-center p-2 text-black lg:hidden dark:text-white'
+				className='-mt-6 mb-4 flex items-center p-2 text-white lg:hidden'
 				onClick={() => setIsOpen(!isOpen)}
 			>
 				<MenuIcon size={36} radius={2} />
@@ -46,8 +46,8 @@ const ControlsSidebar: React.FC = React.memo(() => {
 
 			{/* Sidebar for large screens */}
 			<div className='hidden w-full flex-col p-8 lg:flex'>
-				<div className='relative flex flex-col justify-start gap-4 rounded-md bg-zinc-800/40 px-4 py-2 text-black dark:text-white'>
-					<p className='text-base leading-tight text-black md:text-lg lg:text-xl dark:text-white'>
+				<div className='relative flex flex-col justify-start gap-4 rounded-md bg-zinc-800/40 px-4 py-2 text-white'>
+					<p className='text-base leading-tight text-white md:text-lg lg:text-xl'>
 						Controls
 					</p>
 					<div className='flex items-center justify-between gap-2'>
@@ -55,7 +55,7 @@ const ControlsSidebar: React.FC = React.memo(() => {
 						<Button
 							onClick={() => {}}
 							label={color}
-							className='w-[9rem] cursor-default justify-between text-xs'
+							className='w-[9rem] cursor-default justify-between text-xs hover:bg-inherit'
 						>
 							<input
 								type='color'
@@ -66,6 +66,7 @@ const ControlsSidebar: React.FC = React.memo(() => {
 								}}
 								className='flex h-6 w-6 cursor-pointer rounded-full'
 								style={{ backgroundColor: color }}
+								aria-label='color'
 							/>
 						</Button>
 					</div>
@@ -108,7 +109,7 @@ const ControlsSidebar: React.FC = React.memo(() => {
 			{/* Mobile Menu */}
 			{isOpen && (
 				<div className='fixed inset-0 z-10 bg-black bg-opacity-50 lg:hidden'>
-					<div className='absolute left-0 top-0 h-full w-64 bg-zinc-900 p-4 text-black dark:text-white'>
+					<div className='absolute left-0 top-0 h-full w-64 bg-zinc-900 p-4 text-white'>
 						<div className='flex flex-col gap-4'>
 							<p className='flex items-center justify-between text-base leading-tight md:text-lg lg:text-xl'>
 								Controls
@@ -134,7 +135,7 @@ const ControlsSidebar: React.FC = React.memo(() => {
 								<Button
 									onClick={() => {}}
 									label={color}
-									className='w-[9rem] cursor-default justify-between text-xs'
+									className='w-[9rem] cursor-default justify-between text-xs hover:bg-inherit'
 								>
 									<input
 										type='color'
@@ -145,6 +146,7 @@ const ControlsSidebar: React.FC = React.memo(() => {
 										}}
 										className='flex h-6 w-6 cursor-pointer rounded-full'
 										style={{ backgroundColor: color }}
+										aria-label='color'
 									/>
 								</Button>
 							</div>
@@ -223,6 +225,7 @@ export const ControlRangeItem: React.FC<{
 			value={value}
 			onChange={(e) => onChange(Number(e.target.value))}
 			className='range-sm accent-primary1 mb-6 h-1 w-full cursor-pointer appearance-none rounded-lg bg-zinc-700'
+			aria-label={label}
 		/>
 	</div>
 );

@@ -15,7 +15,7 @@ export const Guide: React.FC = () => {
 	}, []);
 
 	return (
-		<div className='guide-container flex h-full min-h-[40rem] flex-col border border-b-0 border-dashed border-zinc-300 p-5 text-black md:p-8 dark:border-zinc-700 dark:text-white'>
+		<div className='guide-container flex h-full min-h-[40rem] flex-col border border-b-0 border-dashed border-zinc-700 p-5 text-white md:p-8'>
 			<Helmet>
 				<title>Guide</title>
 			</Helmet>

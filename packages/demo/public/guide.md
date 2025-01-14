@@ -1,6 +1,6 @@
 # About Raster
 
-Raster is an open-source icon library that offers over 50 vector (SVG) files for displaying icons and symbols in both digital and non-digital projects. The library aims to simplify the incorporation of icons into projects for designers and developers by providing several official packages.
+Raster is an open-source icon library that offers over 100+ vector (SVG) files for displaying icons and symbols in both digital and non-digital projects. The library aims to simplify the incorporation of icons into projects for designers and developers by providing several official packages.
 
 ## Icon Collection
 

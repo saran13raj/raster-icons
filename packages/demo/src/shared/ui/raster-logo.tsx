@@ -3,11 +3,11 @@ import React from 'react';
 import { cn } from '../utils';
 
 export const RasterLogo: React.FC<{
-	customClass: string;
-}> = ({ customClass = '' }) => {
+	className: string;
+}> = ({ className = '' }) => {
 	return (
 		<svg
-			className={cn('h-4 w-4', customClass)}
+			className={cn('h-4 w-4', className)}
 			width='256'
 			height='256'
 			viewBox='0 0 256 256'
