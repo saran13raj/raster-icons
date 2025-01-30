@@ -1,21 +1,21 @@
 <svg width="256" height="256" viewBox="0 0 256 256" fill="none" xmlns="http://www.w3.org/2000/svg">
-<rect width="16" height="16" transform="matrix(0 -1 -1 0 104 152)" />
-<rect width="16" height="16" transform="matrix(0 -1 -1 0 104 168)" />
-<rect width="16" height="16" transform="matrix(0 -1 -1 0 184 168)" />
-<rect width="16" height="16" transform="matrix(0 -1 -1 0 168 184)" />
-<rect width="16" height="16" transform="matrix(0 -1 -1 0 152 184)" />
-<rect width="16" height="16" transform="matrix(0 -1 -1 0 104 184)" />
-<rect width="16" height="16" transform="matrix(0 -1 -1 0 88 184)" />
-<rect width="16" height="16" transform="matrix(0 -1 -1 0 120 184)" />
-<rect width="16" height="16" transform="matrix(0 -1 -1 0 104 120)" />
-<rect width="16" height="16" transform="matrix(0 -1 -1 0 152 120)" />
-<rect width="16" height="16" transform="matrix(0 -1 -1 0 184 56)" />
-<rect width="16" height="16" transform="matrix(0 -1 -1 0 168 120)" />
-<rect width="16" height="16" transform="matrix(0 -1 -1 0 184 136)" />
-<rect width="16" height="16" transform="matrix(0 -1 -1 0 104 136)" />
-<rect width="16" height="16" transform="matrix(0 -1 -1 0 168 152)" />
-<rect width="16" height="16" transform="matrix(0 -1 -1 0 88 56)" />
-<rect width="16" height="16" transform="matrix(0 -1 -1 0 88 136)" />
+<rect width="14" height="14" rx="rx" transform="matrix(0 -1 -1 0 104 152)" />
+<rect width="14" height="14" rx="rx" transform="matrix(0 -1 -1 0 104 168)" />
+<rect width="14" height="14" rx="rx" transform="matrix(0 -1 -1 0 184 168)" />
+<rect width="14" height="14" rx="rx" transform="matrix(0 -1 -1 0 168 184)" />
+<rect width="14" height="14" rx="rx" transform="matrix(0 -1 -1 0 152 184)" />
+<rect width="14" height="14" rx="rx" transform="matrix(0 -1 -1 0 104 184)" />
+<rect width="14" height="14" rx="rx" transform="matrix(0 -1 -1 0 88 184)" />
+<rect width="14" height="14" rx="rx" transform="matrix(0 -1 -1 0 120 184)" />
+<rect width="14" height="14" rx="rx" transform="matrix(0 -1 -1 0 104 120)" />
+<rect width="14" height="14" rx="rx" transform="matrix(0 -1 -1 0 152 120)" />
+<rect width="14" height="14" rx="rx" transform="matrix(0 -1 -1 0 182 54)" />
+<rect width="14" height="14" rx="rx" transform="matrix(0 -1 -1 0 168 120)" />
+<rect width="14" height="14" rx="rx" transform="matrix(0 -1 -1 0 184 136)" />
+<rect width="14" height="14" rx="rx" transform="matrix(0 -1 -1 0 104 136)" />
+<rect width="14" height="14" rx="rx" transform="matrix(0 -1 -1 0 168 152)" />
+<rect width="14" height="14" rx="rx" transform="matrix(0 -1 -1 0 86 54)" />
+<rect width="14" height="14" rx="rx" transform="matrix(0 -1 -1 0 88 136)" />
 <rect x="152" y="200" width="14" height="14" rx="rx"/>
 <rect x="168" y="200" width="14" height="14" rx="rx"/>
 <rect x="184" y="200" width="14" height="14" rx="rx"/>

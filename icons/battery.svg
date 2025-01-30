@@ -1,6 +1,6 @@
 <svg width="256" height="256" viewBox="0 0 256 256" fill="none" xmlns="http://www.w3.org/2000/svg">
-<rect width="16" height="16" transform="matrix(0 -1 -1 0 144 64)" />
-<rect width="16" height="16" transform="matrix(0 -1 -1 0 128 64)" />
+<rect width="14" height="14" rx="rx" transform="matrix(0 -1 -1 0 144 64)" />
+<rect width="14" height="14" rx="rx" transform="matrix(0 -1 -1 0 128 64)" />
 <rect x="112" y="192" width="14" height="14" rx="rx"/>
 <rect x="128" y="192" width="14" height="14" rx="rx"/>
 <rect x="144" y="192" width="14" height="14" rx="rx"/>
