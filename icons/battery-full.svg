@@ -1,36 +1,42 @@
-<svg width="256" height="256" viewBox="0 0 256 256" fill="none" xmlns="http://www.w3.org/2000/svg">
-<rect width="14" height="14" rx="rx" transform="matrix(0 -1 -1 0 144 64)" />
-<rect width="14" height="14" rx="rx" transform="matrix(0 -1 -1 0 128 64)" />
-<rect width="14" height="14" rx="rx" transform="matrix(0 -1 -1 0 144 176)" />
-<rect width="14" height="14" rx="rx" transform="matrix(0 -1 -1 0 128 176)" />
-<rect width="14" height="14" rx="rx" transform="matrix(0 -1 -1 0 144 144)" />
-<rect width="14" height="14" rx="rx" transform="matrix(0 -1 -1 0 128 144)" />
-<rect width="14" height="14" rx="rx" transform="matrix(0 -1 -1 0 144 112)" />
-<rect width="14" height="14" rx="rx" transform="matrix(0 -1 -1 0 128 112)" />
-<rect x="112" y="192" width="14" height="14" rx="rx"/>
-<rect x="128" y="192" width="14" height="14" rx="rx"/>
-<rect x="144" y="192" width="14" height="14" rx="rx"/>
-<rect x="96" y="192" width="14" height="14" rx="rx"/>
-<rect x="80" y="192" width="14" height="14" rx="rx"/>
-<rect x="112" y="64" width="14" height="14" rx="rx"/>
-<rect x="128" y="64" width="14" height="14" rx="rx"/>
-<rect x="144" y="64" width="14" height="14" rx="rx"/>
-<rect x="160" y="64" width="14" height="14" rx="rx"/>
-<rect x="96" y="64" width="14" height="14" rx="rx"/>
-<rect x="80" y="96" width="14" height="14" rx="rx"/>
-<rect x="80" y="112" width="14" height="14" rx="rx"/>
-<rect x="80" y="64" width="14" height="14" rx="rx"/>
-<rect x="80" y="80" width="14" height="14" rx="rx"/>
-<rect x="80" y="128" width="14" height="14" rx="rx"/>
-<rect x="80" y="144" width="14" height="14" rx="rx"/>
-<rect x="80" y="160" width="14" height="14" rx="rx"/>
-<rect x="80" y="176" width="14" height="14" rx="rx"/>
-<rect x="160" y="112" width="14" height="14" rx="rx"/>
-<rect x="160" y="128" width="14" height="14" rx="rx"/>
-<rect x="160" y="96" width="14" height="14" rx="rx"/>
-<rect x="160" y="80" width="14" height="14" rx="rx"/>
-<rect x="160" y="144" width="14" height="14" rx="rx"/>
-<rect x="160" y="160" width="14" height="14" rx="rx"/>
-<rect x="160" y="176" width="14" height="14" rx="rx"/>
-<rect x="160" y="192" width="14" height="14" rx="rx"/>
+<svg
+	width="256"
+	height="256"
+	viewBox="0 0 256 256"
+	fill="none"
+	xmlns="http://www.w3.org/2000/svg"
+>
+	<rect width="14" height="14" rx="rx" transform="matrix(0 -1 -1 0 144 64)" />
+	<rect width="14" height="14" rx="rx" transform="matrix(0 -1 -1 0 128 64)" />
+	<rect width="14" height="14" rx="rx" transform="matrix(0 -1 -1 0 144 176)" />
+	<rect width="14" height="14" rx="rx" transform="matrix(0 -1 -1 0 128 176)" />
+	<rect width="14" height="14" rx="rx" transform="matrix(0 -1 -1 0 144 144)" />
+	<rect width="14" height="14" rx="rx" transform="matrix(0 -1 -1 0 128 144)" />
+	<rect width="14" height="14" rx="rx" transform="matrix(0 -1 -1 0 144 112)" />
+	<rect width="14" height="14" rx="rx" transform="matrix(0 -1 -1 0 128 112)" />
+	<rect x="112" y="192" width="14" height="14" rx="rx" />
+	<rect x="128" y="192" width="14" height="14" rx="rx" />
+	<rect x="144" y="192" width="14" height="14" rx="rx" />
+	<rect x="96" y="192" width="14" height="14" rx="rx" />
+	<rect x="80" y="192" width="14" height="14" rx="rx" />
+	<rect x="112" y="64" width="14" height="14" rx="rx" />
+	<rect x="128" y="64" width="14" height="14" rx="rx" />
+	<rect x="144" y="64" width="14" height="14" rx="rx" />
+	<rect x="160" y="64" width="14" height="14" rx="rx" />
+	<rect x="96" y="64" width="14" height="14" rx="rx" />
+	<rect x="80" y="96" width="14" height="14" rx="rx" />
+	<rect x="80" y="112" width="14" height="14" rx="rx" />
+	<rect x="80" y="64" width="14" height="14" rx="rx" />
+	<rect x="80" y="80" width="14" height="14" rx="rx" />
+	<rect x="80" y="128" width="14" height="14" rx="rx" />
+	<rect x="80" y="144" width="14" height="14" rx="rx" />
+	<rect x="80" y="160" width="14" height="14" rx="rx" />
+	<rect x="80" y="176" width="14" height="14" rx="rx" />
+	<rect x="160" y="112" width="14" height="14" rx="rx" />
+	<rect x="160" y="128" width="14" height="14" rx="rx" />
+	<rect x="160" y="96" width="14" height="14" rx="rx" />
+	<rect x="160" y="80" width="14" height="14" rx="rx" />
+	<rect x="160" y="144" width="14" height="14" rx="rx" />
+	<rect x="160" y="160" width="14" height="14" rx="rx" />
+	<rect x="160" y="176" width="14" height="14" rx="rx" />
+	<rect x="160" y="192" width="14" height="14" rx="rx" />
 </svg>
