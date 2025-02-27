@@ -19,7 +19,23 @@ function App() {
 	return (
 		<>
 			<div className='relative mx-auto flex min-h-screen flex-col border-dashed border-zinc-700 bg-[#1a1c1f] 2xl:max-w-7xl 2xl:border-x'>
-				<main className='flex-grow'>
+				<a
+					href='https://pixcrit.saran13raj.com'
+					target='_blank'
+					className='group absolute left-1'
+				>
+					<div className='relative z-40 flex h-[2.5rem] w-[99vw] flex-row items-center justify-center px-5 text-center text-xs font-medium transition-all duration-300 md:text-sm'>
+						{/* <div className='banner-gradient-1 absolute inset-0'></div> */}
+						<div className='banner-gradient absolute inset-0 blur-[6px] brightness-75'></div>
+						<p className='text-white underline-offset-4 group-hover:underline'>
+							🎉 Pixcrit - Effortlessly gather and manage UI design feedback directly
+							on your deployed web apps
+						</p>
+
+						<ArrowUpRightIcon className='h-5 w-5 text-white transition-all duration-200 ease-out group-hover:-translate-y-0.5 group-hover:translate-x-0.5' />
+					</div>
+				</a>
+				<main className='mt-10 flex-grow'>
 					<section className='relative overflow-hidden'>
 						<div className='relative p-5 md:p-0 lg:px-16 xl:px-28'>
 							<div className='flex flex-col'>

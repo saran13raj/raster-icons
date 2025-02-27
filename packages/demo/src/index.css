@@ -140,3 +140,47 @@ input[type='color']::-moz-color-swatch {
 	border-radius: 0.375rem;
 	color: #f54;
 }
+
+@keyframes moving-banner {
+	0% {
+		background-position: 0% 0%;
+	}
+	100% {
+		background-position: 100% 0%;
+	}
+}
+
+.banner-gradient {
+	animation: moving-banner 20s linear infinite;
+	--start: hsla(0, 92%, 62%, 0.5);
+	--mid: rgba(20, 158, 218, 0.4);
+	--end: rgba(217, 10, 214, 0.51);
+	--via: rgba(255, 85, 68, 0.87);
+	background-image: repeating-linear-gradient(
+		45deg,
+		var(--end),
+		var(--start) 4%,
+		var(--start) 8%,
+		transparent 9%,
+		transparent 14%,
+		var(--mid) 16%,
+		var(--mid) 20%,
+		transparent,
+		var(--via) 36%,
+		var(--via) 40%,
+		transparent 42%,
+		var(--end) 46%,
+		var(--end) calc(50% - 16.8px)
+	);
+	mix-blend-mode: color-dodge;
+	background-size: 200% 100%;
+}
+
+.banner-gradient {
+	-webkit-mask-image: linear-gradient(180deg, #fff, transparent),
+		radial-gradient(circle at top center, #fff, transparent);
+	mask-image: linear-gradient(180deg, #fff, transparent),
+		radial-gradient(circle at top center, #fff, transparent);
+	-webkit-mask-composite: source-in, xor;
+	mask-composite: intersect;
+}
