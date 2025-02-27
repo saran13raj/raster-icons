@@ -22,9 +22,9 @@ function App() {
 				<a
 					href='https://pixcrit.saran13raj.com'
 					target='_blank'
-					className='group absolute left-1'
+					className='group absolute flex w-full'
 				>
-					<div className='relative z-40 flex h-[2.5rem] w-[99vw] flex-row items-center justify-center px-5 text-center text-xs font-medium transition-all duration-300 md:text-sm'>
+					<div className='relative z-40 flex h-[2.5rem] w-full flex-row items-center justify-center px-5 text-center text-xs font-medium transition-all duration-300 md:text-sm'>
 						{/* <div className='banner-gradient-1 absolute inset-0'></div> */}
 						<div className='banner-gradient absolute inset-0 blur-[6px] brightness-75'></div>
 						<p className='text-white underline-offset-4 group-hover:underline'>
