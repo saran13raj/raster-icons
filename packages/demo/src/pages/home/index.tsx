@@ -36,7 +36,7 @@ export const Home: React.FC = () => {
 						target='_blank'
 					>
 						<img
-							src='https://startupfa.me/badges/featured-badge-small.webp'
+							src='https://startupfa.me/badges/featured-badge-small-dark.webp'
 							alt='Raster - Retro pixel art with modern custom options | Startup Fame'
 							width='224'
 							height='36'
