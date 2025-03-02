@@ -31,6 +31,17 @@ export const Home: React.FC = () => {
 			</Helmet>
 			<div className='flex flex-col border border-dashed border-zinc-700 p-5 text-white md:p-8 lg:flex-row'>
 				<div className='flex flex-col gap-2'>
+					<a
+						href='https://startupfa.me/s/raster?utm_source=raster.saran13raj.com'
+						target='_blank'
+					>
+						<img
+							src='https://startupfa.me/badges/featured-badge-small.webp'
+							alt='Raster - Retro pixel art with modern custom options | Startup Fame'
+							width='224'
+							height='36'
+						/>
+					</a>
 					<div className='mb-1 flex w-fit items-center gap-2 rounded-sm bg-zinc-700/60 px-2 py-[0.5px]'>
 						<p
 							className='text-sm font-medium'
