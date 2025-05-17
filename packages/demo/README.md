@@ -9,11 +9,11 @@ Each icon can be imported as a React component, which renders an inline SVG elem
 Additional props can be passed to adjust the icon:
 
 ```jsx
-import { Heart } from 'raster-react';
+import { HeartIcon } from 'raster-react';
 
 const App = () => {
 	return (
-		<Heart
+		<HeartIcon
 			color='#f54'
 			size={13}
 			radius={2}

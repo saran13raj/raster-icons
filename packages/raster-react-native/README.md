@@ -9,11 +9,11 @@ Each icon can be imported as a React component, which renders an inline SVG elem
 Additional props can be passed to adjust the icon:
 
 ```jsx
-import { Heart } from 'raster-react-native';
+import { HeartIcon } from 'raster-react-native';
 
 const MyComponent = () => {
 	return (
-		<Heart
+		<HeartIcon
 			fill='#f54'
 			size={83}
 			radius={4}
