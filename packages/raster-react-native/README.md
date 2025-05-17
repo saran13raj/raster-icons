@@ -19,7 +19,7 @@ const MyComponent = () => {
 			radius={4}
 			strokeWidth={1}
 			stroke='#ffffff'
-			{...props}
+			{...props} // svg props (x, y, strokeDasharray ...)
 		/>
 	);
 };
