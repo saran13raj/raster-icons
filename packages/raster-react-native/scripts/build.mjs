@@ -61,7 +61,6 @@ import Svg, { Rect } from 'react-native-svg';
                 export const ${variables.componentName}: React.FC<IconProps> = ({
                   size = 24,
                   radius = 1,
-                  color = '#000',
                   ...props
                 }) => {
                   return (
@@ -83,9 +82,9 @@ import Svg, { Rect } from 'react-native-svg';
 					.replace(/<rect/g, '<Rect')
 					.replace(/<\/rect>/g, '</Rect>')
 					.replace(/<g/g, '<G')
-					.replace(/<\/g>/g, '</G>')
-					// Replace currentColor with the color prop
-					.replace(/currentColor/g, '{color}');
+					.replace(/<\/g>/g, '</G>');
+				// Replace currentColor with the color prop
+				// .replace(/currentColor/g, '{color}');
 
 				rasterReactNativeContent += `\n${modifiedCode}\n`;
 			} catch (error) {
