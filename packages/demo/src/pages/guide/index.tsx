@@ -3,6 +3,8 @@ import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import { Helmet } from 'react-helmet';
 
+import { RasterLogo } from '../../shared/ui/raster-logo';
+
 // TODO find better way to render docs
 export const Guide: React.FC = () => {
 	const [content, setContent] = React.useState('');
@@ -19,7 +21,15 @@ export const Guide: React.FC = () => {
 			<Helmet>
 				<title>Guide</title>
 			</Helmet>
-			<ReactMarkdown remarkPlugins={[remarkGfm]}>{content}</ReactMarkdown>
+			<React.Suspense
+				fallback={
+					<div className='flex h-full w-full items-center justify-center'>
+						<RasterLogo className='animate-spin-slow h-[6.5rem] w-[6.5rem]' />
+					</div>
+				}
+			>
+				<ReactMarkdown remarkPlugins={[remarkGfm]}>{content}</ReactMarkdown>
+			</React.Suspense>
 		</div>
 	);
 };

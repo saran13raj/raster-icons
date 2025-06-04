@@ -61,6 +61,7 @@ const App = () => {
 			radius={2}
 			strokeWidth={1}
 			className='h-13 w-13'
+			{...props} // svg props (x, y, cx, cy, strokeDasharray ...)
 		/>
 	);
 };

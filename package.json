@@ -8,6 +8,7 @@
 		"version-up": "lerna version",
 		"version-snapshot": "lerna version --no-push --no-git-tag-version --yes --preid snapshot prepatch --force-publish",
 		"version": "pnpm install && git add .",
+		"dev": "pnpm --filter demo run dev",
 		"build:demo": "pnpm --filter demo run build",
 		"lerna": "lerna"
 	},
