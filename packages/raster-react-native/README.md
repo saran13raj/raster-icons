@@ -1,6 +1,4 @@
-## How to use
-
-Raster is built with ES Modules, so it's completely tree-shakable.
+Retro pixel perfect icons with a charming aesthetic for your needs.
 
 Each icon can be imported as a React component, which renders an inline SVG element. This way, only the icons that are imported into your project are included in the final bundle. The rest of the icons are tree-shaken away.
 
