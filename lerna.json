@@ -1,6 +1,6 @@
 {
-	"packages": ["packages/*"],
-	"version": "0.1.1",
+	"packages": ["packages/raster-react", "packages/raster-react-native"],
+	"version": "independent",
 	"command": {
 		"version": {
 			"push": true
