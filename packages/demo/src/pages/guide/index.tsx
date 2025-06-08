@@ -26,7 +26,11 @@ export const Guide: React.FC = () => {
 			<Helmet>
 				<title>Guide</title>
 			</Helmet>
-
+			{(error as Error) && (
+				<div className='flex h-full w-full items-center justify-center'>
+					oops! something wrong
+				</div>
+			)}
 			{isLoading && (
 				<div className='flex h-full w-full items-center justify-center'>
 					<RasterLogo className='animate-spin-slow h-[6.5rem] w-[6.5rem]' />
