@@ -1,6 +1,7 @@
 import { Toaster } from 'sonner';
 import { Link, Route, Routes, useLocation } from 'react-router-dom';
 import { ArrowUpRightIcon, GithubIcon, NpmIcon } from 'raster-react';
+import { QueryClient, QueryClientProvider } from 'react-query';
 
 import { Home } from './pages/home';
 import Icons from './pages/icons';
@@ -14,10 +15,12 @@ const routes = [
 	{ link: '/guide', label: 'Guide' }
 ];
 
+const queryClient = new QueryClient();
+
 function App() {
 	const location = useLocation();
 	return (
-		<>
+		<QueryClientProvider client={queryClient}>
 			<div className='relative mx-auto flex min-h-screen flex-col border-dashed border-zinc-700 bg-[#1a1c1f] 2xl:max-w-7xl 2xl:border-x'>
 				<a
 					href='https://pixcrit.saran13raj.com'
@@ -136,7 +139,7 @@ function App() {
 						'border bg-zinc-900 border-zinc-800 text-white text-xs md:text-sm'
 				}}
 			/>
-		</>
+		</QueryClientProvider>
 	);
 }
 
