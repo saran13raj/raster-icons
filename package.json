@@ -26,5 +26,5 @@
 		"prettier-plugin-tailwindcss": "^0.6.9",
 		"typescript-eslint": "^7.8.0"
 	},
-	"packageManager": "pnpm@8.7.6"
+	"packageManager": "pnpm@9.1.4"
 }
