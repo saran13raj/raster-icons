@@ -1,7 +1,6 @@
 import { SVGProps } from 'react';
 
-export interface IconProps
-	extends Omit<SVGProps<SVGSVGElement>, 'color' | 'strokeWidth' | 'className'> {
+export interface IconProps extends Omit<SVGProps<SVGSVGElement>, 'color' | 'strokeWidth' | 'className'> {
 	/** Color of the icon - accepts any valid CSS color value */
 	color?: string;
 	/** Corner radius of the blocks in pixels */
