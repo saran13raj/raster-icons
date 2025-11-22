@@ -1,6 +1,6 @@
 import React from 'react';
 import { IconProps } from './types';
-import Svg, { Path, Rect } from 'react-native-svg';
+import Svg, { Rect } from 'react-native-svg';
 
 
 export const ZeroIcon: React.FC<IconProps> = ({

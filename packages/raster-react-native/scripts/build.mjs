@@ -20,7 +20,7 @@ async function buildIcons() {
 
 		let rasterReactNativeContent = `import React from 'react';
 import { IconProps } from './types';
-import Svg, { Path, Rect } from 'react-native-svg';
+import Svg, { Rect } from 'react-native-svg';
 
 `;
 
