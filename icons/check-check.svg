@@ -1,0 +1,112 @@
+<svg
+	width="256"
+	height="256"
+	viewBox="0 0 256 256"
+	fill="none"
+	xmlns="http://www.w3.org/2000/svg"
+>
+	<rect
+		x="68"
+		y="124"
+		width="14"
+		height="14"
+		rx="rx"
+		transform="rotate(90 68 124)"
+	/>
+	<rect
+		x="84"
+		y="140"
+		width="14"
+		height="14"
+		rx="rx"
+		transform="rotate(90 84 140)"
+	/>
+	<rect
+		x="100"
+		y="156"
+		width="14"
+		height="14"
+		rx="rx"
+		transform="rotate(90 100 156)"
+	/>
+	<rect
+		x="116"
+		y="140"
+		width="14"
+		height="14"
+		rx="rx"
+		transform="rotate(90 116 140)"
+	/>
+	<rect
+		x="132"
+		y="124"
+		width="14"
+		height="14"
+		rx="rx"
+		transform="rotate(90 132 124)"
+	/>
+	<rect
+		x="148"
+		y="108"
+		width="14"
+		height="14"
+		rx="rx"
+		transform="rotate(90 148 108)"
+	/>
+	<rect
+		x="164"
+		y="92"
+		width="14"
+		height="14"
+		rx="rx"
+		transform="rotate(90 164 92)"
+	/>
+	<rect
+		x="180"
+		y="76"
+		width="14"
+		height="14"
+		rx="rx"
+		transform="rotate(90 180 76)"
+	/>
+	<rect
+		x="140"
+		y="164"
+		width="14"
+		height="14"
+		rx="rx"
+		transform="rotate(90 140 164)"
+	/>
+	<rect
+		x="156"
+		y="148"
+		width="14"
+		height="14"
+		rx="rx"
+		transform="rotate(90 156 148)"
+	/>
+	<rect
+		x="172"
+		y="132"
+		width="14"
+		height="14"
+		rx="rx"
+		transform="rotate(90 172 132)"
+	/>
+	<rect
+		x="188"
+		y="116"
+		width="14"
+		height="14"
+		rx="rx"
+		transform="rotate(90 188 116)"
+	/>
+	<rect
+		x="204"
+		y="100"
+		width="14"
+		height="14"
+		rx="rx"
+		transform="rotate(90 204 100)"
+	/>
+</svg>

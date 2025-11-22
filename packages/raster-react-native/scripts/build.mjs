@@ -20,7 +20,7 @@ async function buildIcons() {
 
 		let rasterReactNativeContent = `import React from 'react';
 import { IconProps } from './types';
-import Svg, { Rect } from 'react-native-svg';
+import Svg, { Path, Rect } from 'react-native-svg';
 
 `;
 
@@ -57,8 +57,13 @@ import Svg, { Rect } from 'react-native-svg';
 							rx: '{radius}'
 						},
 						template: (variables, { tpl }) => {
+							// check if component name starts with a number and prefix with underscore
+							const finalComponentName = /^\d/.test(variables.componentName)
+								? `_${variables.componentName}`
+								: variables.componentName;
+
 							return tpl`
-                export const ${variables.componentName}: React.FC<IconProps> = ({
+                export const ${finalComponentName}: React.FC<IconProps> = ({
                   size = 24,
                   radius = 1,
                   ...props
